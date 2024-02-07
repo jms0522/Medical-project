@@ -62,17 +62,17 @@
 <br><br>
 👨🏻‍💻 **사용 기술** 
 <br><br>
-<img src="https://img.shields.io/badge/amazonec2-FF9900?style=flat-square&logo=amazonec2&logoColor=white">
-<img src="https://img.shields.io/badge/apachehadoop-66CCFF?style=for-the-badge&logo=apachehadoop&logoColor=white">
-<img src="https://img.shields.io/badge/apachespark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white">
-<img src="https://img.shields.io/badge/apachehive-FDEE21?style=flat-square&logo=apachehive&logoColor=white">
-<img src="https://img.shields.io/badge/apacheairflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white"> 
-<img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> 
-<img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"> 
-<img src="https://img.shields.io/badge/css-1572B6?style=flat-square&logo=css3&logoColor=white"> 
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"> 
-<img src="https://img.shields.io/badge/docker-2496ED?style=flat-square&logo=docker&logoColor=white">
-<img src="https://img.shields.io/badge/django-092E20?style=flat-square&logo=django&logoColor=white">
+<img src="https://img.shields.io/badge/amazonec2-FF9900?style=flat-square&logo=amazonec2&logoColor=white" width="80" height="25">
+<img src="https://img.shields.io/badge/apachehadoop-66CCFF?style=for-the-badge&logo=apachehadoop&logoColor=white" width="80" height="25">
+<img src="https://img.shields.io/badge/apachespark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white" width="80" height="25">
+<img src="https://img.shields.io/badge/apachehive-FDEE21?style=flat-square&logo=apachehive&logoColor=white" width="80" height="25">
+<img src="https://img.shields.io/badge/apacheairflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white" width="80" height="25">
+<img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" width="80" height="25">
+<img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white" width="80" height="25">
+<img src="https://img.shields.io/badge/css-1572B6?style=flat-square&logo=css3&logoColor=white" width="80" height="25">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white" width="80" height="25">
+<img src="https://img.shields.io/badge/docker-2496ED?style=flat-square&logo=docker&logoColor=white" width="80" height="25">
+<img src="https://img.shields.io/badge/django-092E20?style=flat-square&logo=django&logoColor=white" width="80" height="25">
 <br><br>
 🗣️ **협업 도구**
 <br><br>
