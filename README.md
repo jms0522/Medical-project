@@ -72,7 +72,8 @@
         <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"> 
 ---------------------------
 <br><br>
-🏛️ **설계**
+
+🏛️ ** 설계 **
 <br><br><br>
 ---------------------------
 
