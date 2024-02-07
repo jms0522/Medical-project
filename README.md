@@ -40,13 +40,13 @@
 <br><br>
 ---------------------------
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/minseok1994)  🤷🏻‍♂️ **배민석** / **팀장** 
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/minseok1994)  <span style="vertical-align: middle;">🤷🏻‍♂️ **배민석** / **팀장** 
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cheol2Y) 💁🏻‍♂️ 윤성철 / 수석엔지니어                      
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cheol2Y) <span style="vertical-align: middle;">💁🏻‍♂️ 윤성철 / 수석엔지니어                      
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stfano) 🍺 홍승표 / 크롤링, 머신러닝 마스터
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stfano) <span style="vertical-align: middle;">🍺 홍승표 / 크롤링, 머신러닝 마스터
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jms0522) 💇🏻‍♂️ 장민수 / 팀원1
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jms0522) <span style="vertical-align: middle;">💇🏻‍♂️ 장민수 / 팀원1
 <br><br>
 -------------------------
 <br><br>
