@@ -40,7 +40,9 @@
 <br><br>
 ---------------------------
 <br><br>
-- 🤷🏻‍♂️  **배민석** / **팀장** /<img src="https://img.shields.io/badge/GitHub-#181717?style=for-the-badge&logo=GitHub&logoColor=white">[github](https://github.com/minseok1994)
+- 🤷🏻‍♂️  **배민석** / **팀장** /
+<img src="https://img.shields.io/badge/GitHub-#181717?style=for-the-badge&logo=GitHub&logoColor=white">
+[github](https://github.com/minseok1994)
 <br><br>
 - 💁🏻‍♂️ 윤성철 / 수석엔지니어 /[github](https://github.com/cheol2Y)
 <br><br>
@@ -61,6 +63,16 @@
 <br><br>
 👨🏻‍💻 **사용 기술** 
 <br><br>
+<img src="https://img.shields.io/badge/apachehadoop-66CCFF?style=for-the-badge&logo=apachehadoop&logoColor=white">
+
+<img src="https://img.shields.io/badge/apachespark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white">
+
+<img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> 
+
+
+<img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"> 
+        <img src="https://img.shields.io/badge/css-1572B6?style=flat-square&logo=css3&logoColor=white"> 
+        <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"> 
 ---------------------------
 <br><br>
 🏛️ **설계**
