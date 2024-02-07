@@ -40,7 +40,7 @@
 <br><br>
 ---------------------------
 <br><br>
-- 🤷🏻‍♂️  **배민석** / **팀장** /<img src="https://img.shields.io/badge/github-#181717?style=for-the-badge&logo=github&logoColor=white">[github](https://github.com/minseok1994)
+- 🤷🏻‍♂️  **배민석** / **팀장** /<img src="https://img.shields.io/badge/Github-#181717?style=for-the-badge&logo=Github&logoColor=white">[github](https://github.com/minseok1994)
 <br><br>
 - 💁🏻‍♂️ 윤성철 / 수석엔지니어 /[github](https://github.com/cheol2Y)
 <br><br>
