@@ -36,7 +36,6 @@
 --------------------------
 <br><br>
 ## 👥 **팀원** 구성 및 소개 (Introduce)
-<br><br>
 👭 **팀명** : /.bashrc
 <br><br>
 ---------------------------
@@ -45,9 +44,9 @@
 <br><br>
 - [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cheol2Y) 💁🏻‍♂️ 윤성철 / 수석엔지니어                      
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stfano) 🍺 홍승표 / 알콜 중독 
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stfano) 🍺 홍승표 / 크롤링, 머신러닝 마스터
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jms0522) 💇🏻‍♂️ 장민수 / 시다바리 
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jms0522) 💇🏻‍♂️ 장민수 / 팀원1
 <br><br>
 -------------------------
 <br><br>
@@ -78,6 +77,12 @@
 🗣️ ** 협업 도구 **
 <img src="https://img.shields.io/badge/slack-4A154B?style=flat-square&logo=slack&logoColor=white">
 <img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=white">
+<br><br>
+⚒️ ** 개발 툴 **
+<img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white">
+<img src="https://img.shields.io/badge/openzeppelin-4E5EE4?style=flat-square&logo=openzeppelin&logoColor=white">
+<img src="https://img.shields.io/badge/jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white">
+
 
 ---------------------------
 <br><br>
