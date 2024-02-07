@@ -50,17 +50,17 @@
 - [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jms0522) 💇🏻‍♂️ 장민수 / 시다바리 
 <br><br>
 -------------------------
-<br>
+<br><br>
 ⚙️ **개발 환경** (Environment)
 <br><br>
 
 -------------------------
-<br>
+<br><br>
 💻 
 **개발 version**
 <br><br><br>
 ---------------------------
-<br>
+<br><br>
 👨🏻‍💻 **사용 기술** 
 <br><br>
 <img src="https://img.shields.io/badge/amazonec2-FF9900?style=flat-square&logo=amazonec2&logoColor=white">
@@ -74,9 +74,8 @@
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"> 
 <img src="https://img.shields.io/badge/docker-2496ED?style=flat-square&logo=docker&logoColor=white">
 <img src="https://img.shields.io/badge/django-092E20?style=flat-square&logo=django&logoColor=white">
-
-🗣️ ** 협업 도구 **
 <br><br>
+🗣️ ** 협업 도구 **
 <img src="https://img.shields.io/badge/slack-4A154B?style=flat-square&logo=slack&logoColor=white">
 <img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=white">
 
@@ -85,13 +84,15 @@
 
 🏛️
 **설계**
-<br><br><br>
+<br><br>
 ---------------------------
+<br><br>
 📌
 **주요 기능 (Description)**
-<br><br><br>
+<br><br>
 
 ---------------------------
+<br><br>
 🔗
 ##참고 
 <br><br>
