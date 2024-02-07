@@ -41,36 +41,44 @@
 ---------------------------
 <br><br>
 - [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/minseok1994)  🤷🏻‍♂️ **배민석** / **팀장** 
-- 💁🏻‍♂️ 윤성철 / 수석엔지니어 /[github](https://github.com/cheol2Y)
 <br><br>
-- 🍺 홍승표 / 알콜 중독 /[github](https://github.com/stfano)
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cheol2Y) 💁🏻‍♂️ 윤성철 / 수석엔지니어                      
 <br><br>
-- 💇🏻‍♂️ 장민수 / 시다바리 /[github](https://github.com/jms0522)
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stfano) 🍺 홍승표 / 알콜 중독 
+<br><br>
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jms0522) 💇🏻‍♂️ 장민수 / 시다바리 
 <br><br>
 -------------------------
-<br><br>
+<br>
 ⚙️ **개발 환경** (Environment)
 <br><br>
 
 -------------------------
-<br><br>
+<br>
 💻 
 **개발 version**
 <br><br><br>
 ---------------------------
-<br><br>
+<br>
 👨🏻‍💻 **사용 기술** 
 <br><br>
+<img src="https://img.shields.io/badge/amazonec2-FF9900?style=flat-square&logo=amazonec2&logoColor=white">
 <img src="https://img.shields.io/badge/apachehadoop-66CCFF?style=for-the-badge&logo=apachehadoop&logoColor=white">
-
 <img src="https://img.shields.io/badge/apachespark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white">
-
+<img src="https://img.shields.io/badge/apachehive-FDEE21?style=flat-square&logo=apachehive&logoColor=white">
+<img src="https://img.shields.io/badge/apacheairflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white"> 
 <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> 
-
-
 <img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"> 
-        <img src="https://img.shields.io/badge/css-1572B6?style=flat-square&logo=css3&logoColor=white"> 
-        <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"> 
+<img src="https://img.shields.io/badge/css-1572B6?style=flat-square&logo=css3&logoColor=white"> 
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"> 
+<img src="https://img.shields.io/badge/docker-2496ED?style=flat-square&logo=docker&logoColor=white">
+<img src="https://img.shields.io/badge/django-092E20?style=flat-square&logo=django&logoColor=white">
+
+🗣️ ** 협업 도구 **
+<br><br>
+<img src="https://img.shields.io/badge/slack-4A154B?style=flat-square&logo=slack&logoColor=white">
+<img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=white">
+
 ---------------------------
 <br><br>
 
