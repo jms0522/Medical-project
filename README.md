@@ -1,4 +1,4 @@
-<img src="/Users/jangminsoo/Downloads/Logo for test.png">
+<img src="https://imgur.com/a/LoY3puF">
 
 
 🖥️ **Data engineering project**
