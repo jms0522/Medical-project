@@ -5,7 +5,10 @@
 <br><br>
 
 <img src="https://images.squarespace-cdn.com/content/v1/59c742a690bade1b59209951/1506436861628-9OKUIE0Y1C8SDLAX62EQ/steth+2.jpg" alt="의료 이미지" width="450" height="300">
+<br><br>
+
 -------------------------
+
 <br><br>
 ## 📕 빅데이터 기반 의료 상담 추천 서비스 (가제)
 ### 📗 증상을 채팅으로 상담해 병(결과)을 도출하고 결과에 따른 다양한 서비스 운용.
