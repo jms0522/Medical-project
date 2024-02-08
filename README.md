@@ -1,8 +1,10 @@
 
-<img src="https://images.squarespace-cdn.com/content/v1/59c742a690bade1b59209951/1506436861628-9OKUIE0Y1C8SDLAX62EQ/steth+2.jpg" alt="의료 이미지" width="300" height="200">
+
 
 🖥️ **Data engineering project**
 <br><br>
+
+<img src="https://images.squarespace-cdn.com/content/v1/59c742a690bade1b59209951/1506436861628-9OKUIE0Y1C8SDLAX62EQ/steth+2.jpg" alt="의료 이미지" width="450" height="300">
 -------------------------
 <br><br>
 ## 📕 빅데이터 기반 의료 상담 추천 서비스 (가제)
