@@ -1,4 +1,3 @@
-<img src="https://imgur.com/nqshiRg">
 
 
 🖥️ **Data engineering project**
