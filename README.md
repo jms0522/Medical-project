@@ -31,41 +31,30 @@
 <br><br>
 이로써 의료 소비자의 정보 획득과 판단에 많은 도움을 줄 수 있기를 기대한다. " 
 
-<br><br>
 --------------------------
-⏰ **개발 기간**
-<br>
+## ⏰ 개발 기간
 ### 📅 24.02.07 ~ 24.03.??
 
 --------------------------
-<br><br>
 ## 👥 **팀원** 구성 및 소개 (Introduce)
 👭 **팀명** : "/.bashrc"
-<br><br>
 ---------------------------
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/minseok1994) <span style="vertical-align: middle;">🤷🏻‍♂️ **배민석** / **팀장**</span>
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/minseok1994) <span style="vertical-align: middle;"> 🤷🏻‍♂️ **배민석** / **팀장**</span>
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cheol2Y) <span style="vertical-align: middle;">💁🏻‍♂️ 윤성철 / 수석엔지니어</span>
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cheol2Y) <span style="vertical-align: middle;"> 💁🏻‍♂️ 윤성철 / 수석엔지니어</span>
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stfano) <span style="vertical-align: middle;">🍺 홍승표 / 크롤링, 머신러닝 마스터</span>
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stfano) <span style="vertical-align: middle;"> 🍺 홍승표 / 크롤링, 머신러닝 마스터</span>
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jms0522) <span style="vertical-align: middle;">💇🏻‍♂️ 장민수 / 팀원1</span>
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jms0522) <span style="vertical-align: middle;"> 💇🏻‍♂️ 장민수 / 팀원1</span>
 <br><br>
 -------------------------
-<br><br>
-⚙️ **개발 환경** (Environment)
-<br><br>
+## ⚙️ 개발 환경 (Environment)
 
 -------------------------
-<br><br>
-💻 
-**개발 version**
-<br><br><br>
+## 💻 개발 version
 ---------------------------
-<br><br>
-👨🏻‍💻 **사용 기술** 
-<br><br>
+## 👨🏻‍💻 사용 기술 
 <img src="https://img.shields.io/badge/amazonec2-FF9900?style=flat-square&logo=amazonec2&logoColor=white" width="80" height="25">
 <img src="https://img.shields.io/badge/apachehadoop-66CCFF?style=for-the-badge&logo=apachehadoop&logoColor=white" width="80" height="25">
 <img src="https://img.shields.io/badge/apachespark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white" width="80" height="25">
@@ -91,20 +80,17 @@
 <br><br>
 
 ---------------------------
-<br><br>
-🏛️
-**설계**
-<br><br>
----------------------------
-<br><br>
-📌
-**주요 기능 (Description)**
-<br><br>
+
+## 🏛️ 설계
 
 ---------------------------
-<br><br>
-🔗**참고** 
-<br><br>
+
+## 📌 주요 기능 (Description)
+
+
+---------------------------
+## 🔗 참고 
+
 
 ---------------------------
 
