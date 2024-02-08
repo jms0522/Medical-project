@@ -78,6 +78,7 @@
 <img src="https://img.shields.io/badge/openzeppelin-4E5EE4?style=flat-square&logo=openzeppelin&logoColor=white">
 <img src="https://img.shields.io/badge/jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white">
 <br><br>
+### 자세한 버전은 requirment 파일로 기재.
 
 ---------------------------
 
