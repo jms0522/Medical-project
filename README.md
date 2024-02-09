@@ -89,7 +89,7 @@
 
 ## 📌 주요 기능 (Description)
 
-[![logo](https://i.ibb.co/QKnkn0z/logo.png)](https://imgbb.com/)
+[![logo-removebg-preview](https://i.ibb.co/fCGgB5X/logo-removebg-preview.png)](https://imgbb.com/)
 
 
 
