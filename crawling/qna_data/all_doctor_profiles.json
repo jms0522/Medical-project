@@ -1,31 +1,192 @@
 [
     {
-        "doctor_id": "gnsPR0eqbWOxYUkkRlwZHh4jTVTtCnsbB6TTnlCmF7A%3D",
-        "doctor_name": "문인희",
-        "specialty": "비전이비인후과 원장",
-        "total_answers": 3212,
-        "affiliation": "대한의사협회"
-    },
-    {
         "doctor_id": "OnBDJZV4kCt9ZeKxepFuNfUzZhlGzWcwpGWftWgpkvE%3D",
         "doctor_name": "정현화",
         "specialty": "늘행복요양병원",
-        "total_answers": 84837,
+        "total_answers": 84856,
         "affiliation": "대한의사협회"
     },
     {
-        "doctor_id": "HqUhEWj6HRrbfqwtC7sns6U6i4QH%2Fb6LcOOIQ%2BVEysQ%3D",
-        "doctor_name": "이현재",
-        "specialty": "이현재피부과의원 대표원장",
-        "total_answers": 342,
-        "affiliation": "닥톡 의사"
+        "doctor_id": "CqVZt1NrTMDRS4UQ%2FbhNzpIDYzdNefZmR%2F4dxNs%2BSdo%3D",
+        "doctor_name": "전평식",
+        "specialty": "시흥 누가재활의학과의원 원장",
+        "total_answers": 61399,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "8Y802qnN3i9vBpzDjFnQuGRL7EKwfpKdtjg2efZw3KE%3D",
+        "doctor_name": "조영욱",
+        "specialty": "베드로내과 원장",
+        "total_answers": 10502,
+        "affiliation": "인터엠디컴퍼니"
+    },
+    {
+        "doctor_id": "FO7VUrYAA7SjlvkTm%2F%2BI1WosHGT9rkgGpM1NkVuRg9M%3D",
+        "doctor_name": "이세라",
+        "specialty": "바로척척의원 원장",
+        "total_answers": 24446,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "ZpLHwcZs6VN8eRB64%2FqBWJ45B1HSM8srkcTGsmusWwA%3D",
+        "doctor_name": "김철수",
+        "specialty": "삼육서울병원 전문의",
+        "total_answers": 30649,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "jIdBlw4M%2BbTYHq%2FdKjG1cG%2FJBUCZN1IuQ81vOOR0cA8%3D",
+        "doctor_name": "배준형",
+        "specialty": "강남 치휴한방병원 진료원장",
+        "total_answers": 725,
+        "affiliation": "대한한의사협회"
+    },
+    {
+        "doctor_id": "pDWHivjCwvxiPuMYKhOZuokbH2EQdNKp3xbqCyF4MD8%3D",
+        "doctor_name": "김인섭",
+        "specialty": "부천 다온요양병원 원장",
+        "total_answers": 737,
+        "affiliation": "닥톡 한의사"
+    },
+    {
+        "doctor_id": "2PXw7zGNL%2Bod9TBMSxHhTaJKj7NJdP0S5EIXM7FYjPs%3D",
+        "doctor_name": "박성혁",
+        "specialty": "눈높이성형외과의원 대표",
+        "total_answers": 53,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "LHwhA789EBzRs8lWaJQfY16jtgHyQ9JhOSWHmXlxkW0%3D",
+        "doctor_name": "한상백",
+        "specialty": "서울제일성형외과의원  원장",
+        "total_answers": 4209,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "jAvxYDYU7TRVznZtGINmR8J900f14hQxsuLJlYPU8cI%3D",
+        "doctor_name": "허준원",
+        "specialty": "허준원MD피부과의원 원장",
+        "total_answers": 68,
+        "affiliation": "대한피부과의사회"
     },
     {
         "doctor_id": "nCAaK1fMJ2ek5ochr1nmvJYIrGP3eXQNyvEqP0g3KK0%3D",
         "doctor_name": "강재춘",
         "specialty": "경희피레토한의원 원장",
-        "total_answers": 2523,
+        "total_answers": 2535,
         "affiliation": "대한한의사협회"
+    },
+    {
+        "doctor_id": "o30sOKRj8i1HGxhh83x9Mi0BkyeNBUDNiIn6LxJFCbw%3D",
+        "doctor_name": "이호준",
+        "specialty": "땡큐성형외과 원장",
+        "total_answers": 248,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "dvn8My1fm%2BzMUBajm3tI5XeBmf2ZGjYVfWHcNiJVqe8%3D",
+        "doctor_name": "최연철",
+        "specialty": "분당차병원 소아전문응급의료센터 진료교수",
+        "total_answers": 11226,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "pb6uXtKRIPPNbuaaRCghpjnnpOcRjA29FMk27luXwTs%3D",
+        "doctor_name": "김헌",
+        "specialty": "휴한의원 노원점 원장",
+        "total_answers": 1929,
+        "affiliation": "닥톡 한의사"
+    },
+    {
+        "doctor_id": "AhbyH2ReUtYNYe2cytw6QjkcxTiTNEhsdlQCE6q9Bsc%3D",
+        "doctor_name": "이무혁",
+        "specialty": "마리아나외과의원 원장",
+        "total_answers": 24128,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "GTgLNd5DAJfeHV%2FMKmwkORb2v%2Ffzxs5HDtRs9JgJnJ4%3D",
+        "doctor_name": "이동은",
+        "specialty": "대구리즈성형외과 대표원장",
+        "total_answers": 9140,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "PJVSJSNiRY6ke0PhLzPvQr3kaRXqkeJvbRr%2B3RuMBas%3D",
+        "doctor_name": "홍지헌",
+        "specialty": "연세이비인후과 원장",
+        "total_answers": 7894,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "U6GAt798iVnSKBsNnWx9fXp%2BG2AYujxef0KeEHQQR2U%3D",
+        "doctor_name": "한형일",
+        "specialty": "한형일성형외과의원 원장",
+        "total_answers": 88130,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "e%2ByOeWx0v2N0423wza3jEPsLA%2Bjamhc4ydFZQDvM48E%3D",
+        "doctor_name": "이동현",
+        "specialty": "토마스의료재단 윌스기념병원 원장",
+        "total_answers": 11,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "XbGsDbVaJ%2FodaAa8tH7ygb7qqHPel6WBpZQqvn%2BvqVo%3D",
+        "doctor_name": "홍진표",
+        "specialty": "새얀안과의원 원장",
+        "total_answers": 16428,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "JqaejRUWkEnNzUUBV1gm%2FIxgymzxxa56LQHdmPMttW4%3D",
+        "doctor_name": "양성규",
+        "specialty": "강남초이스피부과의원 원장",
+        "total_answers": 14189,
+        "affiliation": "대한피부과의사회"
+    },
+    {
+        "doctor_id": "HqUhEWj6HRrbfqwtC7sns6U6i4QH%2Fb6LcOOIQ%2BVEysQ%3D",
+        "doctor_name": "이현재",
+        "specialty": "이현재피부과의원 대표원장",
+        "total_answers": 357,
+        "affiliation": "닥톡 의사"
+    },
+    {
+        "doctor_id": "JN3UBgDdtbG%2F%2Flr2LrLRZmio12gx3BsWhHehOHC5INw%3D",
+        "doctor_name": "손원진",
+        "specialty": "제중한의원 원장",
+        "total_answers": 1845,
+        "affiliation": "하이닥 한의사"
+    },
+    {
+        "doctor_id": "FH75qCBhFZRoecwd5ofYwljAT%2BclGCLRSkxS4SObpSY%3D",
+        "doctor_name": "전창환",
+        "specialty": "해인한의원 원장",
+        "total_answers": 826,
+        "affiliation": "대한한의사협회"
+    },
+    {
+        "doctor_id": "ZXWdG98T63VN%2FfWQt98wKggwMNGnXQlxvWSpUoUCImk%3D",
+        "doctor_name": "전병호",
+        "specialty": "독일치과 대표원장",
+        "total_answers": 231,
+        "affiliation": "닥톡 치과의사"
+    },
+    {
+        "doctor_id": "nzLQ%2BHzJX1hBCuTLSB4IkK3Bo9hoKigpboFHpq5oZtg%3D",
+        "doctor_name": "김장호",
+        "specialty": "김장호 성형외과 원장",
+        "total_answers": 1405,
+        "affiliation": "대한의사협회"
+    },
+    {
+        "doctor_id": "gnsPR0eqbWOxYUkkRlwZHh4jTVTtCnsbB6TTnlCmF7A%3D",
+        "doctor_name": "문인희",
+        "specialty": "비전이비인후과 원장",
+        "total_answers": 3213,
+        "affiliation": "대한의사협회"
     },
     {
         "doctor_id": "ukJTwR6yFI3QdoLNkeiHhzA1RucJaGzPphB6RHgg0pI%3D",
@@ -434,13 +595,6 @@
         "affiliation": "닥톡 한의사"
     },
     {
-        "doctor_id": "pDWHivjCwvxiPuMYKhOZuokbH2EQdNKp3xbqCyF4MD8%3D",
-        "doctor_name": "김인섭",
-        "specialty": "부천 다온요양병원 원장",
-        "total_answers": 734,
-        "affiliation": "닥톡 한의사"
-    },
-    {
         "doctor_id": "QMQK2eEYPLuPFVg5uxrodO%2BXelXHRegjVMFNd98iap0%3D",
         "doctor_name": "김도환",
         "specialty": "두청위편한의원 대표원장",
@@ -595,13 +749,6 @@
         "affiliation": "닥톡 한의사"
     },
     {
-        "doctor_id": "pb6uXtKRIPPNbuaaRCghpjnnpOcRjA29FMk27luXwTs%3D",
-        "doctor_name": "김헌",
-        "specialty": "휴한의원 노원점 원장",
-        "total_answers": 1928,
-        "affiliation": "닥톡 한의사"
-    },
-    {
         "doctor_id": "qo4oBjT%2B62ta%2FaSL5OiVf415ChHlavzxJxvHzRmntag%3D",
         "doctor_name": "한경훈",
         "specialty": "산수유한의원 원장",
@@ -628,13 +775,6 @@
         "specialty": "생기한의원 마포공덕점 대표원장",
         "total_answers": 234,
         "affiliation": "닥톡 한의사"
-    },
-    {
-        "doctor_id": "JN3UBgDdtbG%2F%2Flr2LrLRZmio12gx3BsWhHehOHC5INw%3D",
-        "doctor_name": "손원진",
-        "specialty": "제중한의원 원장",
-        "total_answers": 1843,
-        "affiliation": "하이닥 한의사"
     },
     {
         "doctor_id": "UzhNDRxl93k%2BEzZ8GxYgPZO4O%2BofdBd4fd4nC6Hktvo%3D",
@@ -684,13 +824,6 @@
         "specialty": "한사랑산부인과의원 원장",
         "total_answers": 83429,
         "affiliation": "하이닥"
-    },
-    {
-        "doctor_id": "2PXw7zGNL%2Bod9TBMSxHhTaJKj7NJdP0S5EIXM7FYjPs%3D",
-        "doctor_name": "박성혁",
-        "specialty": "눈높이성형외과의원 대표",
-        "total_answers": 51,
-        "affiliation": "대한의사협회"
     },
     {
         "doctor_id": "KMJzQBE%2F%2Bs8mgMbD3SAjZ6L9vtNERUsbFtNtrSoyccA%3D",
@@ -1890,20 +2023,6 @@
         "affiliation": "닥톡 한의사"
     },
     {
-        "doctor_id": "ZpLHwcZs6VN8eRB64%2FqBWJ45B1HSM8srkcTGsmusWwA%3D",
-        "doctor_name": "김철수",
-        "specialty": "삼육서울병원 전문의",
-        "total_answers": 30630,
-        "affiliation": "대한의사협회"
-    },
-    {
-        "doctor_id": "FO7VUrYAA7SjlvkTm%2F%2BI1WosHGT9rkgGpM1NkVuRg9M%3D",
-        "doctor_name": "이세라",
-        "specialty": "바로척척의원 원장",
-        "total_answers": 24445,
-        "affiliation": "대한의사협회"
-    },
-    {
         "doctor_id": "qUqCSqj5n5%2Bnb4YmxVp4pzF%2Fcj7vym7KzB535u8MIek%3D",
         "doctor_name": "홍인표",
         "specialty": "닥터홍가정의학과의원 원장",
@@ -2044,13 +2163,6 @@
         "affiliation": "닥톡 한의사"
     },
     {
-        "doctor_id": "PJVSJSNiRY6ke0PhLzPvQr3kaRXqkeJvbRr%2B3RuMBas%3D",
-        "doctor_name": "홍지헌",
-        "specialty": "연세이비인후과 원장",
-        "total_answers": 7884,
-        "affiliation": "대한의사협회"
-    },
-    {
         "doctor_id": "SL7AAtRMt8m2vIMMXr6scR8%2BoD%2B7paMNuCvWjWdLg74%3D",
         "doctor_name": "손혜연",
         "specialty": "아이누리한의원 부천점 대표원장",
@@ -2086,13 +2198,6 @@
         "affiliation": "대한의사협회"
     },
     {
-        "doctor_id": "dvn8My1fm%2BzMUBajm3tI5XeBmf2ZGjYVfWHcNiJVqe8%3D",
-        "doctor_name": "최연철",
-        "specialty": "분당차병원 소아전문응급의료센터 진료교수",
-        "total_answers": 11225,
-        "affiliation": "대한의사협회"
-    },
-    {
         "doctor_id": "DqTKVwShVW1miiLJLbQ296BH4G%2B7Ht5yvlZydqUtgAE%3D",
         "doctor_name": "권혁일",
         "specialty": "공산재한의원 원장",
@@ -2112,13 +2217,6 @@
         "specialty": "나비한의원 대표원장",
         "total_answers": 721,
         "affiliation": "닥톡 한의사"
-    },
-    {
-        "doctor_id": "JqaejRUWkEnNzUUBV1gm%2FIxgymzxxa56LQHdmPMttW4%3D",
-        "doctor_name": "양성규",
-        "specialty": "강남초이스피부과의원 원장",
-        "total_answers": 14180,
-        "affiliation": "대한피부과의사회"
     },
     {
         "doctor_id": "QCJpe4lI79wX3cehxnrl51sC%2Fv%2FLMMX4I%2FiDTBnyuY0%3D",
@@ -2147,13 +2245,6 @@
         "specialty": "정보 없음",
         "total_answers": 719,
         "affiliation": "대한피부과의사회"
-    },
-    {
-        "doctor_id": "LHwhA789EBzRs8lWaJQfY16jtgHyQ9JhOSWHmXlxkW0%3D",
-        "doctor_name": "한상백",
-        "specialty": "서울제일성형외과의원  원장",
-        "total_answers": 4205,
-        "affiliation": "대한의사협회"
     },
     {
         "doctor_id": "IvG4goy%2FLR8LNP8TD%2BJapRuD0hdf2NLIqsqIGrabMD4%3D",
@@ -2215,15 +2306,8 @@
         "doctor_id": "xuCQF%2Ft50O1Z%2FB0y9W85R%2BVPStBg7Xf0Ngrz%2FnuRGs0%3D",
         "doctor_name": "김재호",
         "specialty": "서울에스재활의학과의원 원장",
-        "total_answers": 13600,
+        "total_answers": 13599,
         "affiliation": "하이닥"
-    },
-    {
-        "doctor_id": "AhbyH2ReUtYNYe2cytw6QjkcxTiTNEhsdlQCE6q9Bsc%3D",
-        "doctor_name": "이무혁",
-        "specialty": "마리아나외과의원 원장",
-        "total_answers": 24122,
-        "affiliation": "대한의사협회"
     },
     {
         "doctor_id": "7CMFiVSBSRFlIFUWnhS8lXtcg8EhhMQQhpAT6UJ1Tzs%3D",
@@ -2231,13 +2315,6 @@
         "specialty": "소리앤봄한의원 대표원장",
         "total_answers": 1156,
         "affiliation": "닥톡 한의사"
-    },
-    {
-        "doctor_id": "CqVZt1NrTMDRS4UQ%2FbhNzpIDYzdNefZmR%2F4dxNs%2BSdo%3D",
-        "doctor_name": "전평식",
-        "specialty": "시흥 누가재활의학과의원 원장",
-        "total_answers": 61393,
-        "affiliation": "대한의사협회"
     },
     {
         "doctor_id": "KwJq2f3eXInJ6dD1yv3ndirfB9hLibcAGXPVG4DFHSs%3D",
@@ -2294,13 +2371,6 @@
         "specialty": "뮬피부과의원 대표원장",
         "total_answers": 84,
         "affiliation": "닥톡 의사"
-    },
-    {
-        "doctor_id": "jAvxYDYU7TRVznZtGINmR8J900f14hQxsuLJlYPU8cI%3D",
-        "doctor_name": "허준원",
-        "specialty": "허준원MD피부과의원 원장",
-        "total_answers": 61,
-        "affiliation": "대한피부과의사회"
     },
     {
         "doctor_id": "djgXLKKmeN4t%2BSmvWlbXkm%2FuFIQR%2B6qLCwWEAImj%2B1s%3D",
@@ -2548,13 +2618,6 @@
         "affiliation": "대한의사협회"
     },
     {
-        "doctor_id": "XbGsDbVaJ%2FodaAa8tH7ygb7qqHPel6WBpZQqvn%2BvqVo%3D",
-        "doctor_name": "홍진표",
-        "specialty": "새얀안과의원 원장",
-        "total_answers": 16421,
-        "affiliation": "대한의사협회"
-    },
-    {
         "doctor_id": "EWkiwZ%2FdpIHBwh2fB4RmDQ07eTc7I2YE7dJyMiKQdjM%3D",
         "doctor_name": "최원철",
         "specialty": "이오의원 전문의",
@@ -2688,13 +2751,6 @@
         "affiliation": "대한의사협회"
     },
     {
-        "doctor_id": "o30sOKRj8i1HGxhh83x9Mi0BkyeNBUDNiIn6LxJFCbw%3D",
-        "doctor_name": "이호준",
-        "specialty": "땡큐성형외과 원장",
-        "total_answers": 246,
-        "affiliation": "대한의사협회"
-    },
-    {
         "doctor_id": "ChF9q%2FbjXRKg7%2FN%2B%2FEUHi5PpRF6LmWQ33bRM3knHimw%3D",
         "doctor_name": "황지모",
         "specialty": "황지모한의원 대표원장",
@@ -2706,13 +2762,6 @@
         "doctor_name": "김민주",
         "specialty": "V&MJ피부과의원 대표원장",
         "total_answers": 975,
-        "affiliation": "대한의사협회"
-    },
-    {
-        "doctor_id": "U6GAt798iVnSKBsNnWx9fXp%2BG2AYujxef0KeEHQQR2U%3D",
-        "doctor_name": "한형일",
-        "specialty": "한형일성형외과의원 원장",
-        "total_answers": 88114,
         "affiliation": "대한의사협회"
     },
     {
@@ -2756,13 +2805,6 @@
         "specialty": "청담봄여성의원 원장",
         "total_answers": 1773,
         "affiliation": "하이닥"
-    },
-    {
-        "doctor_id": "ZXWdG98T63VN%2FfWQt98wKggwMNGnXQlxvWSpUoUCImk%3D",
-        "doctor_name": "전병호",
-        "specialty": "독일치과 대표원장",
-        "total_answers": 229,
-        "affiliation": "닥톡 치과의사"
     },
     {
         "doctor_id": "IK7qTXULZJxPH%2FAQxBkyb5iWxXrLjluJoYXi%2FZfP%2FBI%3D",
@@ -3099,13 +3141,6 @@
         "specialty": "가온경희한의원 원장",
         "total_answers": 372,
         "affiliation": "대한한의사협회"
-    },
-    {
-        "doctor_id": "GTgLNd5DAJfeHV%2FMKmwkORb2v%2Ffzxs5HDtRs9JgJnJ4%3D",
-        "doctor_name": "이동은",
-        "specialty": "대구리즈성형외과 대표원장",
-        "total_answers": 9136,
-        "affiliation": "대한의사협회"
     },
     {
         "doctor_id": "eau2yNrV2c2Sc1cDFNYN1xaO2mnnENBjtCWckby4XNY%3D",
@@ -3486,24 +3521,10 @@
         "affiliation": "대한한의사협회"
     },
     {
-        "doctor_id": "jIdBlw4M%2BbTYHq%2FdKjG1cG%2FJBUCZN1IuQ81vOOR0cA8%3D",
-        "doctor_name": "배준형",
-        "specialty": "강남 치휴한방병원 진료원장",
-        "total_answers": 718,
-        "affiliation": "대한한의사협회"
-    },
-    {
         "doctor_id": "y1gIA5Am7MOwduNw1ow%2FRIsUGVFko2GOuYbrhMMDARY%3D",
         "doctor_name": "김량희",
         "specialty": "영천베드로내과",
         "total_answers": 7894,
-        "affiliation": "인터엠디컴퍼니"
-    },
-    {
-        "doctor_id": "8Y802qnN3i9vBpzDjFnQuGRL7EKwfpKdtjg2efZw3KE%3D",
-        "doctor_name": "조영욱",
-        "specialty": "베드로내과 원장",
-        "total_answers": 10501,
         "affiliation": "인터엠디컴퍼니"
     },
     {
@@ -3820,13 +3841,6 @@
         "specialty": "트루맨남성의원(부산점) 원장",
         "total_answers": 27649,
         "affiliation": "하이닥"
-    },
-    {
-        "doctor_id": "FH75qCBhFZRoecwd5ofYwljAT%2BclGCLRSkxS4SObpSY%3D",
-        "doctor_name": "전창환",
-        "specialty": "해인한의원 원장",
-        "total_answers": 825,
-        "affiliation": "대한한의사협회"
     },
     {
         "doctor_id": "GGH3GNpx%2BaXZ%2BBU8S7Wc6BUQX6ONskGRDXS2uGnM5p0%3D",
@@ -5915,13 +5929,6 @@
         "affiliation": "닥톡 한의사"
     },
     {
-        "doctor_id": "nzLQ%2BHzJX1hBCuTLSB4IkK3Bo9hoKigpboFHpq5oZtg%3D",
-        "doctor_name": "김장호",
-        "specialty": "김장호 성형외과 원장",
-        "total_answers": 1404,
-        "affiliation": "대한의사협회"
-    },
-    {
         "doctor_id": "bUqR5%2FzMrHV%2FPwu8Q%2F8CcoI05S2mZIkSDbGOn8FvVDE%3D",
         "doctor_name": "박정현",
         "specialty": "보아치과 대표원장",
@@ -6816,13 +6823,6 @@
         "specialty": "서울닥터한치과의원 대표원장",
         "total_answers": 353,
         "affiliation": "하이닥 치과의사"
-    },
-    {
-        "doctor_id": "e%2ByOeWx0v2N0423wza3jEPsLA%2Bjamhc4ydFZQDvM48E%3D",
-        "doctor_name": "이동현",
-        "specialty": "토마스의료재단 윌스기념병원 원장",
-        "total_answers": 7,
-        "affiliation": "대한의사협회"
     },
     {
         "doctor_id": "SNpqMuyrlkIJMJ3zkDVB9AX3sMcxQx8AlSq4i3WelHE%3D",
