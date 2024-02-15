@@ -1,4 +1,18 @@
 # Readme
+
+# commit 규칙
+
+- 각자의 브랜치 생성
+- 로컬에서 작업하는 환경 (ex : work(local)) 브랜치 
+- 원격 자신의 브랜치 (ex: origin work)
+- 로컬에서 하기 전, git pull origin main
+- 로컬 작업 후 
+- git add .
+- git commit -m "message"
+- git push origin work
+
+
+
 # Commit Message 구조
 - type(타입) : title(제목)
 
