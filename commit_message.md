@@ -1,3 +1,5 @@
+# Readme
+---
 # Commit Message 구조
 - type(타입) : title(제목)
 
