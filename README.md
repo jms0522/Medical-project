@@ -75,7 +75,6 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 - 컴퓨터 환경
 - mac m2 (16, 512) * 2
 - mac m3 (16, 512) * 1
-- window (16, 512)
 
 - Hardware: We utilized an A100 * 1 for training our model
 
