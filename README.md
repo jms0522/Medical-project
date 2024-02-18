@@ -7,8 +7,8 @@
 
 ---
 <p align="center">
-  <img src="https://i.ibb.co/fCGgB5X/logo-removebg-preview.png" alt="DR.RC" width="400" height="200"> 
-  <img src="https://i.ibb.co/cXK9WMz/Free-Sample-By-Wix.jpg" alt="Free-Sample-By-Wix" border="0" width="400" height="200">
+  <img src="https://i.ibb.co/fCGgB5X/logo-removebg-preview.png" alt="DR.RC" width="300" height="200"> 
+  <img src="https://i.ibb.co/cXK9WMz/Free-Sample-By-Wix.jpg" alt="Free-Sample-By-Wix" border="0" width="300" height="200">
 </p>
 
 ## 📕 빅데이터 기반 의료 상담 추천 서비스 (가제 : DR.RC)
