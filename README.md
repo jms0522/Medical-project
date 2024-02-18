@@ -71,7 +71,7 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 - mac m3 (16, 512) * 1
 - window (16, 512)
 
-- maching learning : colab V100, A100 / 컴퓨팅 : 1
+- Hardware: We utilized an A100 * 1 for training our model
 
 
 -------------------------
