@@ -57,11 +57,11 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 <br><br>
 - [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/minseok1994) <span style="vertical-align: middle;"> 🤷🏻‍♂️ **배민석** / **팀장**</span>
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cheol2Y) <span style="vertical-align: middle;"> 💁🏻‍♂️ 윤성철 / 수석엔지니어</span>
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cheol2Y) <span style="vertical-align: middle;"> 💁🏻‍♂️ 윤성철 </span>
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stfano) <span style="vertical-align: middle;"> 🍺 홍승표 / 크롤링, 머신러닝 마스터</span>
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/stfano) <span style="vertical-align: middle;"> 🍺 홍승표  </span>
 <br><br>
-- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jms0522) <span style="vertical-align: middle;"> 💇🏻‍♂️ 장민수 / 팀원1</span>
+- [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jms0522) <span style="vertical-align: middle;"> 💇🏻‍♂️ 장민수 </span>
 <br><br>
 -------------------------
 ## ⚙️ 개발 환경 (Environment)
