@@ -11,7 +11,7 @@
   <img src="https://i.ibb.co/ykbRyL9/Free-Sample-By-Wix-removebg-preview.png" alt="Free-Sample-By-Wix" border="0" width="300" height="200">
 </p>
 
-# 📕 빅데이터 기반 의료 상담 추천 서비스 (가제 : Dr.RC)
+# 📕 빅데이터 기반 의료 AI 서비스 (가제 : Dr.RC)
 
 -----
 
