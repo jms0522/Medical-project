@@ -76,15 +76,18 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 -------------------------
 ## ⚙️ 개발 환경 (Environment)
 
-- 컴퓨터 환경
-- mac m2 (16, 512) * 2
-- mac m3 (16, 512) * 1
+- mac os m2 (16, 512) * 2
+- mac os m3 (16, 512) * 1
 
 - Hardware: We utilized an A100 * 1 for training our model
 
 
 -------------------------
 ## 💻 개발 version
+
+- 냉무
+
+### 자세한 버전은 requirment 파일로 기재.
 ---------------------------
 ## 👨🏻‍💻 사용 기술 
 
@@ -114,7 +117,6 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 <img src="https://img.shields.io/badge/openzeppelin-4E5EE4?style=flat-square&logo=openzeppelin&logoColor=white">
 <img src="https://img.shields.io/badge/jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white">
 
-## 자세한 버전은 requirment 파일로 기재.
 
 ---------------------------
 
