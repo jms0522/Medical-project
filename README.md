@@ -120,7 +120,6 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 
 ## 📌 주요 기능 (Description)
 
-[![logo-removebg-preview](https://i.ibb.co/fCGgB5X/logo-removebg-preview.png)](https://imgbb.com/)
 
 ---------------------------
 ## ✓ 한계점
@@ -145,10 +144,20 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
   <br><br>
 - 결과에 신뢰성을 줄 수 있는 장치가 필요하다. (적어도 5명의 답변을 평가하는 등에 시스템)
   <br><br>
+- LLM model hallucination 문제
   
 
 ---------------------------
 ## 🔗 참고 
+
+- hugging face solar model
+https://huggingface.co/LDCC/LDCC-SOLAR-10.7B
+- ko_LLM leaderboard
+https://huggingface.co/spaces/upstage/open-ko-llm-leaderboard
+- 한국빅데이터학회지 : 환자의 주관적 증상 텍스트에 관한 논문
+https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002772325
+- Llama2 기반 korean model
+https://huggingface.co/squarelike/llama2-ko-medical-7b
 
 
 ---------------------------
