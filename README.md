@@ -43,7 +43,7 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
   <br><br>
 - 병원 접근성이 떨어지는 취약 집단에게 챗봇을 통한 의료형평성을 증대할 수 있다.
   <br><br>
-- 즉각적인 반응을 얻을 수 있어, 치료순응도, 복용순응도를 증대 시킬 수 있을 것이라 기대.
+- 즉각적인 반응을 얻을 수 있어, 치료순응도, 복용순응도를 증대 시킬 수 있을 것이라 기대한다.
   <br><br>
 
 --------------------------
@@ -52,8 +52,8 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 
 --------------------------
 ## 👥 **팀원** 구성 및 소개 (Introduce)
+
 👭 **팀명** : "/.bashrc"
----------------------------
 <br><br>
 - [![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/minseok1994) <span style="vertical-align: middle;"> 🤷🏻‍♂️ **배민석** / **팀장**</span>
 <br><br>
@@ -65,6 +65,14 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 <br><br>
 -------------------------
 ## ⚙️ 개발 환경 (Environment)
+
+- 컴퓨터 환경
+- mac m2 (16, 512) * 2
+- mac m3 (16, 512) * 1
+- window (16, 512)
+
+- maching learning : colab V100, A100 / 컴퓨팅 : 1
+
 
 -------------------------
 ## 💻 개발 version
