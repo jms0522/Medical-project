@@ -122,6 +122,15 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 
 ## 🏛️ 설계
 
+
+
+
+
+### WBS 
+
+- [WBS](https://docs.google.com/spreadsheets/d/1oFLN3Jw1LctAbHDAn8w1UbiqlWYGmPEeq1WApiTDwQk/edit?usp=sharing)
+- [GitHub Project Page : medical project](https://github.com/users/jms0522/projects/2)
+
 ---------------------------
 
 ## ✓ 한계점
