@@ -7,7 +7,7 @@
 
 ---
 <p align="center">
-  <img src="https://i.ibb.co/fCGgB5X/logo-removebg-preview.png" alt="DR.RC" width="100" height="100"> DR.RC
+  <img src="https://i.ibb.co/fCGgB5X/logo-removebg-preview.png" alt="DR.RC" width="250" height="150"> 
 </p>
 
 ## 📕 빅데이터 기반 의료 상담 추천 서비스 (가제 : DR.RC)
