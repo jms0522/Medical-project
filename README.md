@@ -6,7 +6,11 @@
 <img src="https://images.squarespace-cdn.com/content/v1/59c742a690bade1b59209951/1506436861628-9OKUIE0Y1C8SDLAX62EQ/steth+2.jpg" alt="의료 이미지" width="600" height="300">
 
 ---
-## 📕 빅데이터 기반 의료 상담 추천 서비스 (가제 : DR.RC) [![의료 이미지](https://i.ibb.co/fCGgB5X/logo-removebg-preview.png)](https://imgbb.com/)
+<p align="center">
+  <img src="https://i.ibb.co/fCGgB5X/logo-removebg-preview.png" alt="DR.RC" width="200" height="200">
+</p>
+
+## 📕 빅데이터 기반 의료 상담 추천 서비스 (가제 : DR.RC)
 
 ### 📗 증상을 채팅으로 상담해 병(결과)을 도출하고 결과에 따른 다양한 서비스 운용. ✓
 ### 📗 위치 기반 병원, 약국 추천 / 약 성분 조회 등. ✓
@@ -17,6 +21,7 @@
 ### 📗 병명을 검색하면 그에 대한 증상을 백과사전 처럼 만들어 간단하게 자가진단 할 수 있는 기능.
 
 #### ✓ : 중요도 높은 항목
+
 -------------------------
 
 
