@@ -90,14 +90,15 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white" width="120" height="25">
 <img src="https://img.shields.io/badge/docker-2496ED?style=flat-square&logo=docker&logoColor=white" width="120" height="25">
 <img src="https://img.shields.io/badge/django-092E20?style=flat-square&logo=django&logoColor=white" width="120" height="25">
----
+
+-------
 
 ## 🗣️ 협업 도구
 
 <img src="https://img.shields.io/badge/slack-4A154B?style=flat-square&logo=slack&logoColor=white">
 <img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=white">
 
----
+------
 
 ## ⚒️ 개발 툴
 <img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white">
