@@ -130,7 +130,7 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
   <br><br>
 - 환자에 대한 사전 정보가 없어 결과의 신뢰성이 떨어진다.
   <br><br>
-- 의료 AI의 오류에 대한 철저한 검증 해결이 되지 않음.
+- 의료 AI의 오류에 대한 철저한 검증 해결이 필요하다.
   <br><br>
 - 결과에 대한 신뢰성이 부족하다. 
 
@@ -144,7 +144,7 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
   <br><br>
 - 결과에 신뢰성을 줄 수 있는 장치가 필요하다. (적어도 5명의 답변을 평가하는 등에 시스템)
   <br><br>
-- LLM model hallucination 문제
+- LLM model hallucination 문제.
   
 
 ---------------------------
