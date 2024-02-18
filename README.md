@@ -132,7 +132,7 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
   <br><br>
 - 대략적인 일정과 todo 리스트를 기재.
 
-### GitHub Project Loadmap
+### 📗 GitHub Project Loadmap
 - [GitHub Project Page : medical project](https://github.com/users/jms0522/projects/2)
   <br><br>
 - 프로젝트 과정에 모든 이슈과 loadmap 자세하게 기록.
