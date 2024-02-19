@@ -181,6 +181,9 @@ https://huggingface.co/squarelike/llama2-ko-medical-7b
 
 ---------------------------
 
+## 📞 문의
+
+- [GitHub Discussions](https://github.com/jms0522/Medical-project/discussions/28)
 
 
 
