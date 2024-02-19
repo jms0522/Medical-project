@@ -145,7 +145,7 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 
 ----
 
-## 📗 System architecture
+## 📗 System Architecture
 <br><br>
 
   ### 📗 Web Architecture
