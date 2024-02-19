@@ -143,12 +143,15 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
   <br><br>
 - 프로젝트 과정에 모든 이슈과 loadmap 자세하게 기록.
 
+----
+
 ### 📗 System architecture
+<br><br>
 
+#### 📗 Web Architecture
+<br><br>
 
-#### web architecture
-
-#### MLOps architecture
+#### 📗 MLOps Architecture
 
 
 ---------------------------
