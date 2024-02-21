@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+{% comment %} <div id="chat-log" style="width: 50%; height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;"></div>
+<input id="chat-message-input" type="text" size="100" placeholder="당신의 증상을 Dr.RC에게 물어보세요!"/><br/>
+<input id="chat-message-submit" type="button" value="Send"/> {% endcomment %}
+{% block body %}
+<div style="width: 100%; height: 100%; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+    <div style="align-self: stretch; padding-top: 36px; padding-left: 46px; padding-right: 46px; background: #F6F6F6; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 39px; display: inline-flex">
+        <div style="justify-content: flex-start; align-items: flex-start; gap: 4.45px; display: inline-flex">
+            <div style="width: 62.95px; height: 48.96px; position: relative">
+                <div style="width: 46.05px; height: 28.84px; left: 1.26px; top: 2.51px; position: absolute; background: #185DFF"></div>
+                <div style="width: 47.31px; height: 28.84px; left: 14.38px; top: 16.35px; position: absolute; background: #001835"></div>
+            </div>
+            <div style="width: 152.60px; height: 45.78px"><span style="color: #001835; font-size: 30.52px; font-family: Poppins; font-weight: 700; word-wrap: break-word">Dr.</span><span style="color: #185DFF; font-size: 30.52px; font-family: Poppins; font-weight: 500; word-wrap: break-word">RC</span></div>
+        </div>
+        <div style="padding-left: 8px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 46px; display: flex">
+            <div style="padding-top: 8px; padding-bottom: 8px; padding-left: 34px; padding-right: 8px; justify-content: flex-start; align-items: flex-start; gap: 8px; display: inline-flex">
+                <div style="flex-direction: column; justify-content: center; align-items: center; gap: 16px; display: inline-flex">
+                    <img style="width: 166px; height: 166px; background: linear-gradient(0deg, #C4C4C4 0%, #C4C4C4 100%); border-radius: 9999px" src="https://via.placeholder.com/166x166" />
+                    <div style="color: #001835; font-size: 25px; font-family: Poppins; font-weight: 500; line-height: 25px; word-wrap: break-word">환자명</div>
+                </div>
+            </div>
+            <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 46px; display: flex">
+                <div style="padding-left: 30px; padding-right: 30px; padding-top: 10px; padding-bottom: 10px; background: #185DFF; box-shadow: 0px 5px 15px #004692; border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-right-radius: 20px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                    <div style="width: 24px; height: 24px; position: relative">
+                        <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute">
+                            <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                            <div style="width: 20px; height: 18px; left: 2px; top: 3px; position: absolute; background: white"></div>
+                        </div>
+                    </div>
+                    <div style="color: white; font-size: 25px; font-family: Poppins; font-weight: 500; word-wrap: break-word">닥터에게 질문하기</div>
+                </div>
+                <div style="align-self: stretch; height: 325px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 35px; display: flex">
+                    <div style="justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                        <div style="width: 24px; height: 24px; position: relative">
+                            <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute">
+                                <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                                <div style="width: 20px; height: 20px; left: 2px; top: 2px; position: absolute; background: #001835"></div>
+                            </div>
+                        </div>
+                        <div style="color: #001835; font-size: 25px; font-family: Poppins; font-weight: 500; line-height: 25px; word-wrap: break-word">병원/약국찾기</div>
+                    </div>
+                    <div style="justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                        <div style="width: 24px; height: 24px; position: relative">
+                            <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute">
+                                <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                                <div style="width: 18px; height: 20px; left: 3px; top: 2px; position: absolute; background: #001835"></div>
+                            </div>
+                        </div>
+                        <div style="color: #001835; font-size: 25px; font-family: Poppins; font-weight: 500; line-height: 25px; word-wrap: break-word">백과사전</div>
+                    </div>
+                    <div style="justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                        <div style="width: 24px; height: 24px; position: relative">
+                            <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute">
+                                <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                                <div style="width: 22px; height: 19.65px; left: 1px; top: 1.35px; position: absolute; background: #001835"></div>
+                            </div>
+                        </div>
+                        <div style="color: #001835; font-size: 25px; font-family: Poppins; font-weight: 500; line-height: 25px; word-wrap: break-word">날씨</div>
+                    </div>
+                    <div style="justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                        <div style="width: 24px; height: 24px; position: relative">
+                            <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute">
+                                <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                                <div style="width: 18px; height: 18px; left: 3px; top: 3px; position: absolute; background: #001835"></div>
+                            </div>
+                        </div>
+                        <div style="color: #001835; font-size: 25px; font-family: Poppins; font-weight: 500; line-height: 25px; word-wrap: break-word">고객센터</div>
+                    </div>
+                    <div style="justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                        <div style="width: 24px; height: 24px; position: relative">
+                            <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute">
+                                <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                                <div style="width: 22px; height: 22px; left: 2px; top: 0px; position: absolute; background: #001835"></div>
+                            </div>
+                        </div>
+                        <div style="color: #001835; font-size: 25px; font-family: Poppins; font-weight: 500; line-height: 25px; word-wrap: break-word">야간모드</div>
+                        <div style="width: 32px; height: 15.54px; position: relative">
+                            <div style="width: 32px; height: 15.54px; left: 0px; top: 0px; position: absolute; background: #001835; border-radius: 7.77px"></div>
+                            <div style="width: 10.97px; height: 10.97px; left: 3.29px; top: 2.74px; position: absolute; background: white; border-radius: 9999px"></div>
+                        </div>
+                    </div>
+                    <div style="justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+                        <div style="width: 24px; height: 24px; position: relative; transform: rotate(90deg); transform-origin: 0 0">
+                            <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute">
+                                <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute"></div>
+                                <div style="width: 11px; height: 18px; left: 6px; top: 3px; position: absolute; background: #001835"></div>
+                            </div>
+                        </div>
+                        <div style="color: #001835; font-size: 25px; font-family: Poppins; font-weight: 500; line-height: 25px; word-wrap: break-word">더보기</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+        <div style="width: 1586px; padding-top: 18px; padding-bottom: 12px; padding-left: 39px; padding-right: 39px; background: #F6F6F6; justify-content: space-between; align-items: center; display: inline-flex">
+            <div style="justify-content: center; align-items: center; gap: 23.47px; display: flex">
+                <img style="width: 83px; height: 83px; background: linear-gradient(0deg, #C4C4C4 0%, #C4C4C4 100%); border-radius: 9999px" src="https://via.placeholder.com/83x83" />
+                <div style="flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
+                    <div style="width: 322.55px; height: 46.31px; color: #002046; font-size: 28.74px; font-family: Poppins; font-weight: 500; line-height: 45.56px; word-wrap: break-word">Dr.RC</div>
+                    <div style="width: 322.55px; height: 46.31px; color: #58677A; font-size: 25px; font-family: Poppins; font-weight: 500; line-height: 39.62px; word-wrap: break-word">마지막 질문 3초 전</div>
+                </div>
+            </div>
+            <div style="justify-content: flex-start; align-items: center; gap: 78px; display: flex">
+                <div style="width: 39px; height: 39px; position: relative">
+                    <div style="width: 39px; height: 39px; left: 0px; top: 0px; position: absolute">
+                        <div style="width: 39px; height: 39px; left: 0px; top: 0px; position: absolute"></div>
+                        <div style="width: 6.50px; height: 29.25px; left: 16.25px; top: 4.88px; position: absolute; background: #001835"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 1237px; padding-top: 40px; background: #D4D4D4; flex-direction: column; justify-content: flex-end; align-items: center; display: flex">
+            <div style="align-self: stretch; height: 592px; padding-top: 6px; padding-bottom: 6px; padding-left: 44px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: flex">
+                <div style="justify-content: center; align-items: center; gap: 33px; display: inline-flex">
+                    <img style="width: 71px; height: 71px; background: linear-gradient(0deg, #C4C4C4 0%, #C4C4C4 100%); border-radius: 9999px" src="https://via.placeholder.com/71x71" />
+                    <div style="padding-left: 32px; padding-right: 32px; padding-top: 17px; padding-bottom: 17px; background: #0F61FF; border-top-left-radius: 41.59px; border-top-right-radius: 41.59px; justify-content: center; align-items: center; gap: 10px; display: flex">
+                        <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">안녕하세요! 어디가 불편하세요?</div>
+                    </div>
+                </div>
+                <div style="justify-content: center; align-items: center; gap: 33px; display: inline-flex">
+                    <img style="width: 71px; height: 71px; background: linear-gradient(0deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0) 100%); border-radius: 9999px" src="https://via.placeholder.com/71x71" />
+                    <div style="padding-left: 32px; padding-right: 32px; padding-top: 17px; padding-bottom: 17px; background: #0F61FF; border-top-left-radius: 41.59px; border-top-right-radius: 41.59px; border-bottom-right-radius: 41.59px; flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                        <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">먼저 진료를 원하는 병원을 선택하고 확인을 눌러 주세요.</div>
+                        <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; border: 2px white solid; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+                            <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">내과</div>
+                        </div>
+                        <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; border: 2px white solid; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+                            <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">치과</div>
+                        </div>
+                        <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; border: 2px white solid; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+                            <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">이비인후과</div>
+                        </div>
+                        <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; border: 2px white solid; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+                            <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">뭐더라</div>
+                        </div>
+                        <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; border: 2px white solid; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+                            <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">우아앙</div>
+                        </div>
+                        <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">잘모르겠어요.</div>
+                    </div>
+                </div>
+            </div>
+            <div style="align-self: stretch; height: 181px; padding-left: 44px; padding-right: 44px; padding-top: 6px; padding-bottom: 6px; flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 11px; display: flex">
+                <div style="transform: rotate(180deg); transform-origin: 0 0; justify-content: center; align-items: center; gap: 33px; display: inline-flex">
+                    <div style="padding-left: 32px; padding-right: 32px; padding-top: 17px; padding-bottom: 17px; transform: rotate(180deg); transform-origin: 0 0; background: #001835; border-top-left-radius: 41.59px; border-top-right-radius: 41.59px; border-bottom-right-radius: 41.59px; justify-content: center; align-items: center; gap: 10px; display: flex">
+                        <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">아이고 배야ㅜㅠ</div>
+                    </div>
+                </div>
+                <div style="transform: rotate(180deg); transform-origin: 0 0; justify-content: center; align-items: center; gap: 33px; display: inline-flex">
+                    <div style="padding-left: 32px; padding-right: 32px; padding-top: 17px; padding-bottom: 17px; transform: rotate(180deg); transform-origin: 0 0; background: #001835; border-top-left-radius: 41.59px; border-top-right-radius: 41.59px; flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                        <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">아랫배가 아파용ㅠㅠㅠㅠ</div>
+                    </div>
+                </div>
+            </div>
+            <div style="align-self: stretch; height: 424px; padding-top: 6px; padding-bottom: 6px; padding-left: 44px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: flex">
+                <div style="justify-content: center; align-items: center; gap: 33px; display: inline-flex">
+                    <img style="width: 71px; height: 71px; background: linear-gradient(0deg, #C4C4C4 0%, #C4C4C4 100%); border-radius: 9999px" src="https://via.placeholder.com/71x71" />
+                    <div style="padding-left: 32px; padding-right: 32px; padding-top: 17px; padding-bottom: 17px; background: #0F61FF; border-top-left-radius: 41.59px; border-top-right-radius: 41.59px; justify-content: center; align-items: center; gap: 10px; display: flex">
+                        <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">아이고 그러세요?</div>
+                    </div>
+                </div>
+                <div style="justify-content: center; align-items: center; gap: 33px; display: inline-flex">
+                    <img style="width: 71px; height: 71px; background: linear-gradient(0deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0) 100%); border-radius: 9999px" src="https://via.placeholder.com/71x71" />
+                    <div style="padding-left: 32px; padding-right: 32px; padding-top: 17px; padding-bottom: 17px; background: #0F61FF; border-top-left-radius: 41.59px; border-top-right-radius: 41.59px; border-bottom-right-radius: 41.59px; flex-direction: column; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                        <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">아랫배가 아프면 보통 내과에 가야할 확률이 높아용<br/>근처 내과를 찾아드릴까요?</div>
+                        <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; border: 2px white solid; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+                            <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">네, 찾아주세요</div>
+                        </div>
+                        <div style="align-self: stretch; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; border: 2px white solid; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+                            <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">아니요, 더 질문할래요</div>
+                        </div>
+                        <div style="color: white; font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">잘모르겠어요.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="align-self: stretch; padding-left: 14px; padding-right: 14px; padding-top: 16px; padding-bottom: 16px; background: #F6F6F6; justify-content: space-between; align-items: center; display: inline-flex">
+            <div style="flex: 1 1 0; height: 65px; justify-content: flex-start; align-items: center; gap: 35px; display: flex">
+                <div style="width: 62px; height: 62px; position: relative">
+                    <div style="width: 62px; height: 62px; left: 0px; top: 0px; position: absolute">
+                        <div style="width: 62px; height: 62px; left: 0px; top: 0px; position: absolute"></div>
+                        <div style="width: 45.49px; height: 49.11px; left: 7.43px; top: 5.45px; position: absolute; background: #A6ADB5"></div>
+                    </div>
+                </div>
+                <div style="flex: 1 1 0; height: 65px; padding-left: 16px; padding-right: 16px; padding-top: 10px; padding-bottom: 10px; background: rgba(0, 0, 0, 0.10); border-radius: 8px; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+                    <div style="color: rgba(0, 24, 53, 0.50); font-size: 28.59px; font-family: Poppins; font-weight: 500; line-height: 45.31px; word-wrap: break-word">메세지를 입력하세용</div>
+                </div>
+            </div>
+            <div style="justify-content: flex-start; align-items: flex-start; gap: 13px; display: flex">
+                <div style="width: 54.87px; height: 54.87px; position: relative">
+                    <div style="width: 54.87px; height: 54.87px; left: 0px; top: 0px; position: absolute">
+                        <div style="width: 54.87px; height: 54.87px; left: 0px; top: 0px; position: absolute"></div>
+                        <div style="width: 44.85px; height: 48.01px; left: 5.01px; top: 2.29px; position: absolute; background: #A6ADB5"></div>
+                    </div>
+                </div>
+                <div style="width: 54px; height: 54px; position: relative">
+                    <div style="width: 54px; height: 54px; left: 0px; top: 0px; position: absolute">
+                        <div style="width: 54px; height: 54px; left: 0px; top: 0px; position: absolute"></div>
+                        <div style="width: 45.47px; height: 45.42px; left: 3.50px; top: 5.10px; position: absolute; background: #A6ADB5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts%}
+<script>
+    $(document).ready(function() {
+        var converter = new showdown.Converter();
+        $('#chat-message-submit').click(function() {
+            var messageInputDom = $('#chat-message-input');
+            var message = messageInputDom.val().trim(); // 입력 값의 앞뒤 공백 제거
+    
+            // 입력값이 비어있으면 함수 실행 중단
+            if (!message) {
+                console.log("입력 필드가 비어 있습니다.");
+                return; // 더 이상 진행하지 않고 종료
+            }
+    
+            var chatLogDom = $('#chat-log');
+    
+            // 사용자 질문을 chat-log에 추가
+            chatLogDom.append("<p><strong>사용자 ID :</strong> " + $("<div>").text(message).html() + "</p>");
+    
+            $.ajax({
+                url: '/api/call/',
+                type: 'GET',
+                data: { 'input': message },
+                success: function(response) {
+                    var html = converter.makeHtml(response.output);  // 마크다운을 HTML로 변환
+                    chatLogDom.append("<div><strong>Dr.RC :</strong><br>" + html + "</div>");  // 변환된 HTML을 chat-log에 추가
+                    chatLogDom.scrollTop(chatLogDom[0].scrollHeight);  // 스크롤을 가장 아래로 이동
+                }
+            });
+    
+            messageInputDom.val('');  // 입력 필드 초기화
+        });
+
+        $('#chat-message-input').keyup(function(e) {
+            if (e.keyCode === 13) {  // 엔터 키가 눌렸을 때
+                $('#chat-message-submit').click();
+            }
+        });
+
+        // 페이지 로드 시 메시지 입력 필드에 포커스 설정
+        $('#chat-message-input').focus();
+    });
+</script>
+{% endblock %}
