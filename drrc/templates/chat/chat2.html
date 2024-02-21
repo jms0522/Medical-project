@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div id="chat-log" style="width: 50%; height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;"></div>
+<input id="chat-message-input" type="text" size="100" placeholder="당신의 증상을 Dr.RC에게 물어보세요!"/><br/>
+<input id="chat-message-submit" type="button" value="Send"/>
+{% endblock %}
+
+{% block scripts%}
+<script>
+    $(document).ready(function() {
+        var converter = new showdown.Converter();
+        $('#chat-message-submit').click(function() {
+            var messageInputDom = $('#chat-message-input');
+            var message = messageInputDom.val().trim(); // 입력 값의 앞뒤 공백 제거
+    
+            // 입력값이 비어있으면 함수 실행 중단
+            if (!message) {
+                console.log("입력 필드가 비어 있습니다.");
+                return; // 더 이상 진행하지 않고 종료
+            }
+    
+            var chatLogDom = $('#chat-log');
+    
+            // 사용자 질문을 chat-log에 추가
+            chatLogDom.append("<p><strong>사용자 ID :</strong> " + $("<div>").text(message).html() + "</p>");
+    
+            $.ajax({
+                url: '/api/call/',
+                type: 'GET',
+                data: { 'input': message },
+                success: function(response) {
+                    var html = converter.makeHtml(response.output);  // 마크다운을 HTML로 변환
+                    chatLogDom.append("<div><strong>Dr.RC :</strong><br>" + html + "</div>");  // 변환된 HTML을 chat-log에 추가
+                    chatLogDom.scrollTop(chatLogDom[0].scrollHeight);  // 스크롤을 가장 아래로 이동
+                }
+            });
+    
+            messageInputDom.val('');  // 입력 필드 초기화
+        });
+
+        $('#chat-message-input').keyup(function(e) {
+            if (e.keyCode === 13) {  // 엔터 키가 눌렸을 때
+                $('#chat-message-submit').click();
+            }
+        });
+
+        // 페이지 로드 시 메시지 입력 필드에 포커스 설정
+        $('#chat-message-input').focus();
+    });
+</script>
+{% endblock %}
