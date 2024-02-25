@@ -203,5 +203,10 @@ https://huggingface.co/squarelike/llama2-ko-medical-7b
 
 - [GitHub Discussions](https://github.com/jms0522/Medical-project/discussions/28)
 
+---------------------------
+
+## 😀 vote
+
+- [3차발표](https://strawpoll.com/wAg3AolvGy8)
 
 
