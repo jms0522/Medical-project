@@ -207,6 +207,6 @@ https://huggingface.co/squarelike/llama2-ko-medical-7b
 
 ## 😀 vote
 
-- [3차발표](https://strawpoll.com/wAg3AolvGy8)
+- [3차발표](https://strawpoll.com/ajnEObG9NZW)
 
 
