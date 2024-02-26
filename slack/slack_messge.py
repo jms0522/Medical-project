@@ -1,22 +1,20 @@
 import json
 import requests
 import sys
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL_MEDICAL")
 
 def send_msg(msg):
-    url = "https://hooks.slack.com/services/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"  # 웹후크 URL을 입력하세요
-    message = "Medical project message :\n" + msg  # 보낼 메시지
-    slack_data = {
-        "username": "Medical project management bot",  # 보내는 사람 이름
-        "icon_emoji": ":satellite:",
-        "text": message,  # 여기서 메시지를 전송합니다
-    }
-
-    byte_length = str(sys.getsizeof(slack_data))
-    headers = {'Content-Type': "application/json", 'Content-Length': byte_length}
-    response = requests.post(url, data=json.dumps(slack_data), headers=headers)
+    url = SLACK_WEBHOOK_URL
+    slack_data = {"text": "Medical project message :\n" + msg}
+    response = requests.post(url, data=json.dumps(slack_data), headers={'Content-Type': 'application/json'})
     
     if response.status_code != 200:
         raise Exception(response.status_code, response.text)
 
-# 사용 예시
-send_msg("python 코드로 구현한 메시지입니당,..")
+send_msg("데이터 전처리 작업이 완료 되었습니다.")
+
