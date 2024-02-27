@@ -1,0 +1,28 @@
+torchrun --nproc_per_node=1 --nnodes=3 --node_rank=0 --master_addr="172.17.0.8" --master_port=12345 deepspeed.py
+
+torchrun --nproc_per_node=1 --nnodes=3 --node_rank=1 --master_addr="172.17.0.8" --master_port=12345 deepspeed.py
+
+torchrun --nproc_per_node=1 --nnodes=3 --node_rank=2 --master_addr="172.17.0.8" --master_port=12345 deepspeed.py
+
+
+
+
+CUDA_LAUNCH_BLOCKING=1 torchrun --nproc_per_node=4 --nnodes=2 --node_rank=0 --rdzv_id=456 --rdzv_backend=c10d --rdzv_endpoint=172.17.0.8:12355 ddp.py 50 10
+
+CUDA_LAUNCH_BLOCKING=1 torchrun --nproc_per_node=2 --nnodes=2 --node_rank=1 --rdzv_id=456 --rdzv_backend=c10d --rdzv_endpoint=172.17.0.8:12355 ddp.py 50 10
+
+torchrun --nproc_per_node=2 --use_env main.py total_epochs save_every --batch_size 32
+
+
+
+
+
+
+torchrun \
+--nproc_per_node=2 \
+--nnodes=2 \
+--node_rank=0 \
+--rdzv_id=456 \
+--rdzv_backend=nccl \
+--rdzv_endpoint=172.17.0.8:12355 \
+ddp.py 50 10

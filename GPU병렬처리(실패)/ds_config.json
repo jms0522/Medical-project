@@ -1,0 +1,10 @@
+{
+    "train_batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "fp16": {
+        "enabled": true
+    },
+    "zero_optimization": {
+        "stage": 2
+    }
+}
