@@ -4,6 +4,7 @@ import sys
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv()
 
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL_MEDICAL")

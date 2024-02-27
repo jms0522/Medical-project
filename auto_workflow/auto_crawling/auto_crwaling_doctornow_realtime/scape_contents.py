@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import requests
+from datetime import datetime
 from bs4 import BeautifulSoup
 import csv
 import json 
@@ -11,7 +12,9 @@ def scrape_and_save_questions(question_pids, folder_name="/Users/jangminsoo/Desk
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
     
-    csv_file_path = os.path.join(folder_name, 'doctornow_realtime.csv')
+    # 현재 날짜를 가져와서 파일 이름에 포함
+    current_date = datetime.now().strftime("%Y-%m-%d")
+    csv_file_path = os.path.join(folder_name, f'doctornow_realtime_{current_date}.csv')
     
     with open(csv_file_path, mode='w', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -43,7 +46,7 @@ def scrape_and_save_questions(question_pids, folder_name="/Users/jangminsoo/Desk
                 continue
 
     print("CSV 파일이 생성되었습니다.")
-
+    
 # 슬랙 알람 코드 
 load_dotenv()
 webhook_url = os.getenv('SLACK_WEBHOOK_URL_MEDICAL')

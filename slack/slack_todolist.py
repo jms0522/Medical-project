@@ -23,11 +23,11 @@ def get_last_issue_comment(owner, repo, issue_number, token):
 
 def send_slack_message(webhook_url, message):
     formatted_message = message.replace("- [ ]", "❗️ ").replace("- [x]", ":white_check_mark:").replace("##", "💻 ")
-    formatted_message = formatted_message.replace("/#", "**")  # '/#'을 '*'로 변경하여 볼드체로 만듦
+    formatted_message = formatted_message.replace("/#", "**") 
     payload = {
         "username": "TodoList Update Bot",
         "icon_emoji": ":clipboard:",
-        "text": f"*오늘의 TodoList 업데이트 !!*\n\n{formatted_message}",  # 볼드체로 변경 및 줄바꿈 추가
+        "text": f"*오늘의 TodoList 업데이트 !!*\n\n{formatted_message}",  
         "mrkdwn": True  # Markdown 사용을 활성화
     }
     response = requests.post(webhook_url, json=payload)
