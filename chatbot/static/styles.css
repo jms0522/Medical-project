@@ -1,0 +1,58 @@
+body, html {
+    height: 100%;
+}
+
+.messages-box {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.messages-list {
+    padding-left: 0;
+}
+
+.message {
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+.message-text {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.received {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+}
+
+.message-form {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.message-input {
+    flex: 1;
+    border-radius: 0;
+    border-right: none;
+}
+
+.btn-send {
+    border-radius: 0;
+}
+
+.chat-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
