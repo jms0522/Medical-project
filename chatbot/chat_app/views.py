@@ -67,9 +67,9 @@ rag_chain = (
 def ask_question(request):
     if request.method == "POST":
         if request.user.is_authenticated:
-            user = request.user
+            username = request.user.username
         else:
-            user = None
+            username = None
         text = request.POST.get("text").strip()
         
         if not text:
@@ -77,7 +77,7 @@ def ask_question(request):
         try:
             # LangChain을 사용하여 답변 생성
             response_data = rag_chain.invoke(text)  # formatted_docs를 검색 컨텍스트로 사용
-            ChatBot.objects.create(user=user, question=text, answer=response_data, created_at=timezone.now())
+            ChatBot.objects.create(username=username, question=text, answer=response_data, created_at=timezone.now())
             
             return JsonResponse({"data": response_data}, status=200)
         except Exception as e:
@@ -87,21 +87,32 @@ def ask_question(request):
 def chat(request):
     # 사용자가 로그인한 경우와 로그인하지 않은   경우를 구분하여 처리
     if request.user.is_authenticated:
-        user = request.user
+        username = request.user.username
     else:
-        user = None  # 로그인하지 않은 경우, user를 None으로 설정
-    chats = ChatBot.objects.filter(user=user)
+        username = None  # 로그인하지 않은 경우, user를 None으로 설정
+    chats = ChatBot.objects.filter(username=username)
     return render(request, "chat_bot.html", {"chats": chats})
+
+@login_required
+def get_user_chats(request):
+    if request.user.is_authenticated:
+        username = request.user.username
+        chats = ChatBot.objects.filter(username=username).order_by('-created_at')
+        chat_data = list(chats.values('question', 'answer', 'created_at'))
+        return JsonResponse({'chats': chat_data})
+    else:
+        return JsonResponse({'error': 'User not authenticated'}, status=401)
+
 
 @csrf_exempt
 def log_interaction(request):
     if request.method == 'POST': # 로그 데이터를 JSON 형식으로 파싱
         data = json.loads(request.body) # 요청에서 사용자 인증 정보를 확인
         # 로그인한 사용자의 경우 사용자 ID를 사용, 그렇지 않은 경우 None
-        user_id = request.user.id if request.user.is_authenticated else None
+        username = request.user.username if request.user.is_authenticated else None
         url = data.get('url') or 'localhost'
         log_data = {
-            "user_id": user_id,
+            "username": username,
             "event_type": data.get('eventType'),
             "element_id": data.get('elementId'),
             "element_class": data.get('elementClass'),
@@ -112,7 +123,8 @@ def log_interaction(request):
         }       
         save_log.delay(log_data)
         
-        logger_interaction.info(f"User interaction by {user_id}: {data}") # 사용자 아이디를 로그 메시지에 포함(로깅)
+        logger_interaction.info(f"User interaction by {username}: {data}") # 사용자 아이디를 로그 메시지에 포함(로깅)
 
         return JsonResponse({"status": "success"}, status=200)
     return JsonResponse({"error": "Invalid request"}, status=400)
+
