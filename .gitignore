@@ -343,3 +343,8 @@ cython_debug/
 # End of https://www.toptal.com/developers/gitignore/api/django
 
 images/*
+
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
