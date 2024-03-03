@@ -54,3 +54,46 @@ messageForm.addEventListener('submit', (event)=> {
         messagesList.appendChild(messageItem);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('/api/get_user_chats/', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include'
+    })
+    .then(response => response.json())
+    .then(data => {
+        data.chats.forEach(chat => {
+            const questionItem = document.createElement('li');
+            questionItem.classList.add('message', 'sent'); // 'sent' 클래스로 사용자 메시지 스타일 적용
+            questionItem.innerHTML = `
+                <div class="message-text">
+                    <div class="message-sender">
+                        <b>You</b>
+                    </div>
+                    <div class="message-content">
+                        ${chat.question}
+                    </div>
+                </div>
+            `;
+            messagesList.appendChild(questionItem);
+            // 답변 메시지 추가
+            const answerItem = document.createElement('li');
+            answerItem.classList.add('message', 'received'); // 'received' 클래스로 Dr.RC 메시지 스타일 적용
+            answerItem.innerHTML = `
+                <div class="message-text">
+                    <div class="message-sender">
+                        <b>Dr.RC</b>
+                    </div>
+                    <div class="message-content">
+                        ${chat.answer}
+                    </div>
+                </div>
+            `;
+            messagesList.appendChild(answerItem);
+        });
+    })
+    .catch(error => console.error('Error:', error));
+});
