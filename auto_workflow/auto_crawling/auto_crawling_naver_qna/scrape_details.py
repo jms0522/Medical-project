@@ -1,28 +1,39 @@
+from concurrent.futures import ThreadPoolExecutor
 import requests
 from bs4 import BeautifulSoup
-from scrape_utils import append_to_csv
-import json
-from dotenv import load_dotenv
 import os
-
-
-def scrape_details(doc_id):
-    base_url = "https://kin.naver.com/qna/detail.naver?d1id=7&dirId=70201&docId={}"
-    headers = {
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6",
-        "Cache-Control": "max-age=0",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
-        "Upgrade-Insecure-Requests": "1",
-    }
-    try:
-        url = base_url.format(doc_id)
-        response = requests.get(url, headers=headers)
-        # print(response.text) 디버깅 용
+from scrape_utils import append_to_csv 
+from datetime import datetime
+def fetch(url, headers):
+    with requests.get(url, headers=headers) as response:
         response.raise_for_status()
-        soup = BeautifulSoup(response.text, "html.parser")
+        return response.text
 
+def scrape_details_thread(doc_id):
+    date_format = "%Y.%m.%d."
+    today = datetime.now().strftime(date_format)
+    base_url = "https://kin.naver.com/qna/detail.naver?d1id=7&dirId=70201&docId={}"
+    # headers = {
+    #     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    #     "Accept-Encoding": "gzip, deflate, br",
+    #     "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6",
+    #     "Cache-Control": "max-age=0",
+    #     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    #     "Upgrade-Insecure-Requests": "1",
+    # }
+    url = base_url.format(doc_id)
+
+    # CPU 코어 수를 기반으로 max_workers 계산
+    cpu_cores = os.cpu_count()
+    if cpu_cores:
+        max_workers = cpu_cores * 2  # I/O 바운드 작업 가정, 코어 수의 2배 사용
+    else:
+        max_workers = 4  # CPU 코어 수를 결정할 수 없는 경우 기본값 사용
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future = executor.submit(fetch, url)    # header는 생략했음
+        html = future.result()
+        soup = BeautifulSoup(html, "html.parser")
         data = {
             "doc_id": doc_id,
             "title": (
@@ -42,16 +53,8 @@ def scrape_details(doc_id):
             ),
         }
 
-        # print("Extracted Data:", data) 디버깅 용
-
-        csv_file_name = "details.csv"  # 예시 파일 이름
+        # CSV 파일에 데이터 저장하는 로직
+        csv_file_name = f"details_{today}.csv"
         csv_file_path = os.path.join("./csv_folder/today_naver_QnA", csv_file_name)
-
         append_to_csv(data, csv_file_path)
 
-    except Exception as e:
-        print(f"Error scraping doc_id {doc_id}: {e}")
-
-
-# test_doc_id = '465191789'  # 실제 존재하는 doc_id로 교체해야 합니다.
-# scrape_details(test_doc_id)

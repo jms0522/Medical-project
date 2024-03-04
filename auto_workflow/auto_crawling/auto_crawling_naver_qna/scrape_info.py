@@ -58,10 +58,10 @@ def scrape_info(profile):
     # 저장 로직
     folder_path = "./csv_folder/today_naver_QnA"
     os.makedirs(folder_path, exist_ok=True)
-    filename = os.path.join(
-        folder_path,
-        f'today_naver_QnA_{profile["doctor_id"]}_{datetime.now().strftime("%Y%m%d")}.json',
-    )
+    # filename = os.path.join(
+    #     folder_path,
+    #     f'today_naver_QnA_{profile["doctor_id"]}_{datetime.now().strftime("%Y%m%d")}.json',
+    # )
     save_all_data_to_one_json(all_info)
 
     return all_info

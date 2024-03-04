@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'log',  # 앞에서 생성한 데이터베이스 이름
-        'USER': 'root',      # 데이터베이스 사용자 이름
+        'USER': 'postgres',      # 데이터베이스 사용자 이름
         'PASSWORD': 'root123',  # 데이터베이스 사용자 비밀번호
         'HOST': 'localhost',   # 데이터베이스 호스트 (원격 데이터베이스의 경우 IP 주소나 도메인)
         'PORT': '5432',        # PostgreSQL 기본 포트 번호

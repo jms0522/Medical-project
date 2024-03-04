@@ -28,7 +28,7 @@ import logging
 logger_interaction = logging.getLogger('drrc')
 logger_error = logging.getLogger('error')
 
-client = chromadb.PersistentClient(path="/Users/baeminseog/chatbot")
+client = chromadb.PersistentClient(path="C://Users//Playdata//Desktop//final//Medical-project//chatbot")
 collection_name = "my_collection"
 
 embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")

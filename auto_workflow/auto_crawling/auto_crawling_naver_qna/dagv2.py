@@ -62,7 +62,9 @@ def scrape_details_for_all_docs(**kwargs):
     return all_details
 
 def preprocess_csv_file(**kwargs):
-    csv_file_path = './csv_folder/today_naver_QnA/details.csv'  # CSV 파일의 경로
+    date_format = "%Y.%m.%d."
+    today = datetime.now().strftime(date_format)
+    csv_file_path = f'./csv_folder/today_naver_QnA/details_{today}.csv'  # CSV 파일의 경로
 
     # CSV 파일 읽기
     df = pd.read_csv(csv_file_path)
@@ -71,7 +73,7 @@ def preprocess_csv_file(**kwargs):
     preprocessed_df = preprocess_dataframe(df)
 
     # 전처리된 데이터를 새로운 CSV 파일로 저장
-    preprocessed_csv_file_path = './csv_folder/today_naver_QnA/preprocessed_details.csv'
+    preprocessed_csv_file_path = f'./csv_folder/today_naver_QnA/preprocessed_{today}.csv'
     preprocessed_df.to_csv(preprocessed_csv_file_path, index=False)
 
     return preprocessed_csv_file_path
@@ -91,7 +93,7 @@ def insert_data_to_postgres(**kwargs):
 
 
     # PostgreSQL 연결 설정
-    engine = create_engine('postgresql+psycopg2://postgres:hadoop@172.23.189.177:5433/test')
+    engine = create_engine('postgresql+psycopg2://postgres:root123@172.23.189.177:5432/test')
 
     # 전처리된 데이터를 DataFrame으로 읽기
     df = pd.read_csv(preprocessed_csv_file_path)
@@ -104,7 +106,7 @@ def insert_data_to_postgres(**kwargs):
 scrape_doctor_profiles_task = PythonOperator(
     task_id='scrape_doctor_profiles',
     python_callable=scrape_doctor_profiles,
-    op_kwargs={'max_pages': 10, 'start_page': 1},
+    op_kwargs={'max_pages': 50, 'start_page': 1},
     do_xcom_push=True,  # 결과를 XCom에 저장
     dag=dag,
 )
