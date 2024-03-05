@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
+import os
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = 'django-insecure-2l$b98&z)kdjhn2opsno-$7bim0b+4#i0%ylq%3*zfjzf8&b#$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG') == 'True'
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
@@ -81,11 +82,11 @@ WSGI_APPLICATION = 'chatbot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'log',  # 앞에서 생성한 데이터베이스 이름
-        'USER': 'postgres',      # 데이터베이스 사용자 이름
-        'PASSWORD': 'root123',  # 데이터베이스 사용자 비밀번호
-        'HOST': 'localhost',   # 데이터베이스 호스트 (원격 데이터베이스의 경우 IP 주소나 도메인)
-        'PORT': '5432',        # PostgreSQL 기본 포트 번호
+        'NAME': os.getenv('DB_NAME'),  # 앞에서 생성한 데이터베이스 이름
+        'USER': os.getenv('DB_USER'),      # 데이터베이스 사용자 이름
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # 데이터베이스 사용자 비밀번호
+        'HOST': os.getenv('DB_HOST'),   # 데이터베이스 호스트
+        'PORT': os.getenv('DB_PORT'),        # PostgreSQL 기본 포트 번호
     }
 }
 

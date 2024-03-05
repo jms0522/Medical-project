@@ -9,12 +9,14 @@ from langchain_community.embeddings.sentence_transformer import SentenceTransfor
 from langchain_community.retrievers import BM25Retriever
 from langchain.retrievers import EnsembleRetriever
 from langchain_community.vectorstores import Chroma
+from langchain.prompts import ChatPromptTemplate
 
 # chatbot
 import os
 import pickle
 from .models import ChatBot, UserInteractionLog
 import json
+import markdown
 
 # django
 from django.shortcuts import render, reverse
@@ -22,6 +24,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
+from django.utils.safestring import mark_safe
 from .tasks import save_log
 import logging
 
@@ -49,7 +52,18 @@ ensemble_retriever = EnsembleRetriever(
     retrievers=[bm25_retriever, chroma_retriever], weights=[0.8, 0.2]
 )
 
-prompt = hub.pull("rlm/rag-prompt")
+# prompt = hub.pull("rlm/rag-prompt")
+
+template = '''
+질문은 사용자가 겪고 있는 증상에 대한 질문입니다. 다음과 같이 답변해주세요:
+- 예측 가능한 증상
+- 해결 방법
+- 약 추천
+이 3가지를 의사님의 의견을 바탕으로 답변해주세요.
+질문 : {question}
+'''
+prompt = ChatPromptTemplate.from_template(template)
+
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
 
 def format_docs(docs):
@@ -95,13 +109,18 @@ def chat(request):
 
 @login_required
 def get_user_chats(request):
-    if request.user.is_authenticated:
-        username = request.user.username
-        chats = ChatBot.objects.filter(username=username).order_by('-created_at')
-        chat_data = list(chats.values('question', 'answer', 'created_at'))
-        return JsonResponse({'chats': chat_data})
-    else:
-        return JsonResponse({'error': 'User not authenticated'}, status=401)
+    username = request.user.username 
+    chats = ChatBot.objects.filter(username=username).order_by('created_at')
+    # 마크다운을 HTML로 변환하여 리스트에 추가
+    chat_data = []
+    for chat in chats:
+        chat_data.append({
+            'username': chat.username,
+            'question': mark_safe(markdown.markdown(chat.question)),
+            'answer': mark_safe(markdown.markdown(chat.answer)),
+            'created_at': chat.created_at,
+        })
+    return JsonResponse({'chats': chat_data})
 
 
 @csrf_exempt
