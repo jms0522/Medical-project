@@ -9,6 +9,8 @@ from datetime import datetime
 
 def scrape_info(profile):
     doctor_id = profile["doctor_id"]
+    hospitals = profile["hospitals"]
+    doctor_name = profile["doctor_name"]
     base_url = (
         "https://kin.naver.com/userinfo/expert/answerList.naver?u={user_id}&page={page}"
     )
@@ -42,6 +44,8 @@ def scrape_info(profile):
                                 "doctor_id": doctor_id,
                                 "doc_id": doc_id,
                                 "date": date_text,
+                                "hospitals": hospitals,
+                                "doctors": doctor_name,
                             }
                         )
                     else:
