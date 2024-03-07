@@ -27,6 +27,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 from .tasks import save_log
 import logging
+from django.http import HttpResponse
+from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
 
 logger_interaction = logging.getLogger('drrc')
 logger_error = logging.getLogger('error')
@@ -158,3 +160,6 @@ def log_interaction(request):
 
         return JsonResponse({"status": "success"}, status=200)
     return JsonResponse({"error": "Invalid request"}, status=400)
+
+def metrics(request):
+    return HttpResponse(generate_latest(), content_type=CONTENT_TYPE_LATEST)
