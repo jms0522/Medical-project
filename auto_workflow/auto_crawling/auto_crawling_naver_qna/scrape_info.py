@@ -9,6 +9,8 @@ from datetime import datetime
 
 def scrape_info(profile):
     doctor_id = profile["doctor_id"]
+    hospitals = profile["hospitals"]
+    doctor_name = profile["doctor_name"]
     base_url = (
         "https://kin.naver.com/userinfo/expert/answerList.naver?u={user_id}&page={page}"
     )
@@ -42,6 +44,8 @@ def scrape_info(profile):
                                 "doctor_id": doctor_id,
                                 "doc_id": doc_id,
                                 "date": date_text,
+                                "hospitals": hospitals,
+                                "doctors": doctor_name,
                             }
                         )
                     else:
@@ -58,10 +62,10 @@ def scrape_info(profile):
     # 저장 로직
     folder_path = "./csv_folder/today_naver_QnA"
     os.makedirs(folder_path, exist_ok=True)
-    filename = os.path.join(
-        folder_path,
-        f'today_naver_QnA_{profile["doctor_id"]}_{datetime.now().strftime("%Y%m%d")}.json',
-    )
+    # filename = os.path.join(
+    #     folder_path,
+    #     f'today_naver_QnA_{profile["doctor_id"]}_{datetime.now().strftime("%Y%m%d")}.json',
+    # )
     save_all_data_to_one_json(all_info)
 
     return all_info

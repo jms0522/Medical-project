@@ -4,9 +4,10 @@ from scrape_utils import append_to_csv
 import json
 from dotenv import load_dotenv
 import os
+from datetime import datetime
 
 
-def scrape_details(doc_id):
+def scrape_details(doc_id, doctors, hospitals):
     base_url = "https://kin.naver.com/qna/detail.naver?d1id=7&dirId=70201&docId={}"
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
@@ -16,6 +17,8 @@ def scrape_details(doc_id):
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
         "Upgrade-Insecure-Requests": "1",
     }
+    today = datetime.today()
+    today_str = today.strftime("%Y-%m-%d")
     try:
         url = base_url.format(doc_id)
         response = requests.get(url, headers=headers)
@@ -24,7 +27,7 @@ def scrape_details(doc_id):
         soup = BeautifulSoup(response.text, "html.parser")
 
         data = {
-            "doc_id": doc_id,
+            "date": today_str,
             "title": (
                 soup.select_one(".title").text.strip()
                 if soup.select_one(".title")
@@ -40,11 +43,14 @@ def scrape_details(doc_id):
                 if soup.select_one(".se-main-container")
                 else "N/A"
             ),
+            "doctors": doctors,
+            "hospitals": hospitals,
+            "doc_id": doc_id,
         }
 
         # print("Extracted Data:", data) 디버깅 용
 
-        csv_file_name = "details.csv"  # 예시 파일 이름
+        csv_file_name = f"details_{today_str}_QNA.csv"  # 예시 파일 이름
         csv_file_path = os.path.join("./csv_folder/today_naver_QnA", csv_file_name)
 
         append_to_csv(data, csv_file_path)

@@ -8,7 +8,7 @@ import os
 
 # get_questionPid.py에서 가져온 question_pids 리스트를 활용해서 contents의 내용을 가져오는 함수
 
-def scrape_and_save_questions(question_pids, folder_name="/Users/jangminsoo/Desktop/dev/pro/Medical-project/csv_folder/doctornow_realtime"):
+def scrape_and_save_questions(question_pids, folder_name="./csv_folder/doctornow_realtime"):
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
     
@@ -18,7 +18,7 @@ def scrape_and_save_questions(question_pids, folder_name="/Users/jangminsoo/Desk
     
     with open(csv_file_path, mode='w', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['제목', '내용', '작성시간', '카테고리', '답변'])
+        writer.writerow(['date', 'title', 'question', 'answer' ,'category'])
 
         for question_pid in question_pids:
             try:
@@ -40,7 +40,7 @@ def scrape_and_save_questions(question_pids, folder_name="/Users/jangminsoo/Desk
                 category_text = category.text.strip() if category else "카테고리 정보 없음"
                 answer_text = answer.text.strip() if answer else "답변 없음"
                 
-                writer.writerow([title_text, content_text, createtime_text, category_text, answer_text])
+                writer.writerow([createtime_text, title_text, content_text, answer_text, category_text])
             except Exception as e:
                 print(f"Error while scraping {question_pid}: {e}")
                 continue
