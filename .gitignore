@@ -68,6 +68,9 @@ cover/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+base.py
+local.py
+prod.py
 
 # Flask stuff:
 instance/
@@ -343,3 +346,10 @@ cython_debug/
 # End of https://www.toptal.com/developers/gitignore/api/django
 
 images/*
+
+#DS_Store, Mac에서 폴더의 메타데이터를 저장하는 파일
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
