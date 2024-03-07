@@ -10,13 +10,14 @@ from langchain_community.retrievers import BM25Retriever
 from langchain.retrievers import EnsembleRetriever
 from langchain_community.vectorstores import Chroma
 from langchain.prompts import ChatPromptTemplate
+import chromadb
+
 
 # chatbot
 import os
 import pickle
 from .models import ChatBot, UserInteractionLog
 import json
-import markdown
 
 # django
 from django.shortcuts import render, reverse
@@ -24,14 +25,13 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
-from django.utils.safestring import mark_safe
 from .tasks import save_log
 import logging
 
 logger_interaction = logging.getLogger('drrc')
 logger_error = logging.getLogger('error')
 
-client = chromadb.PersistentClient(path="C://Users//Playdata//Desktop//final//Medical-project//chatbot")
+client = chromadb.PersistentClient(path="/Users/baeminseog/Medical-project/chatbot/chroma_db")
 collection_name = "my_collection"
 
 embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
@@ -39,31 +39,48 @@ embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2"
 # db2 = Chroma(persist_directory="./chroma_db", embedding_function=embedding_function)
 # retriever = db2.as_retriever(search_type="mmr")
 
-with open('list.pkl', 'rb') as file:
-    docs = pickle.load(file)
+# with open('list.pkl', 'rb') as file:
+#     docs = pickle.load(file)
 
-chroma_vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embedding_function)
+chroma_vectorstore = Chroma(persist_directory="/Users/baeminseog/Medical-project/chatbot/chroma_db", embedding_function=embedding_function)
 chroma_retriever = chroma_vectorstore.as_retriever(search_kwargs={"k": 5})
 
-bm25_retriever = BM25Retriever.from_documents(docs)
-bm25_retriever.k = 5
+# bm25_retriever = BM25Retriever.from_documents(docs)
+# bm25_retriever.k = 5
 
-ensemble_retriever = EnsembleRetriever(
-    retrievers=[bm25_retriever, chroma_retriever], weights=[0.8, 0.2]
-)
+# ensemble_retriever = EnsembleRetriever(
+#     retrievers=[bm25_retriever, chroma_retriever], weights=[0.8, 0.2]
+# )
 
-# prompt = hub.pull("rlm/rag-prompt")
+retriever = chroma_vectorstore.as_retriever()
 
-template = '''
-질문은 사용자가 겪고 있는 증상에 대한 질문입니다. 다음과 같이 답변해주세요:
-- 예측 가능한 증상
-- 해결 방법
-- 약 추천
-이 3가지를 의사님의 의견을 바탕으로 답변해주세요.
-질문 : {question}
-'''
-prompt = ChatPromptTemplate.from_template(template)
 
+template = """
+    ※ 안녕하세요. 질문해주신 증상에 대한 답변을 해드릴게요. 
+    너는 의사이고, 환자가 말하는 증상을 듣고 합리적인 근거를 바탕으로 병명을 도출하는 역할을 한다. 
+    또한 약에 대한 질문을 받으면 참조 가능한 정보를 바탕으로 자세히 대답한다. 
+    약에 효능, 복용방법 등을 자세히 답변하며, 마크다운 형식을 사용하여 응답을 구조화하고 가독성을 높인다. 
+    약에 대해 자세히 말하길 원하면 참조 가능한 모든 정보를 참조하여 합리적이고 근거 있는 정보를 바탕으로 자세히 답변한다. 
+    환자로부터 제공된 정보를 분석하여 병명을 추론하고, 해당 병명에 대한 원인, 증상, 치료법 등을 정확하고 친절하게 설명해야 한다. 
+    대화 중에 제공된 증상 정보만으로 진단하기 어려운 경우, 추가적인 정보를 요청하는 질문을 할 수 있으며, 이를 통해 보다 정확한 진단을 내릴 수 있다. 
+    모든 응답은 참조 가능한 정보를 바탕으로 하며, 환자와의 대화는 친절하고 이해하기 쉬운 방식으로 진행된다. 
+    병명의 도출은 들어온 정보를 기반으로 합리적으로 이루어지며, 나머지 정보는 해당 질병에 대한 기존 지식을 참조하여 답변한다.
+
+    질문은 사용자가 겪고 있는 증상에 대한 질문입니다. 다음과 같이 답변해주세요:
+
+    - 예측 가능한 증상
+    - 해결 방법
+    - 약 추천
+    - 약에 대한 설명
+    - 약에 대한 정보
+    이 5가지를 의사님의 의견을 바탕으로 마크다운 형식으로 답변해주세요.
+
+    질문 : {question}
+
+    ※ 약에 대해 더 자세한 정보를 원하시면 해당 약의 이름을 말씀해주세요. 감사합니다. -Dr.RC-
+    """
+
+prompt = ChatPromptTemplate.from_template(template) 
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
 
 def format_docs(docs):
@@ -71,7 +88,7 @@ def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
 
 rag_chain = (
-    {"context": ensemble_retriever | format_docs, "question": RunnablePassthrough()}
+    {"context": retriever | format_docs, "question": RunnablePassthrough()}
     | prompt
     | llm
     | StrOutputParser()
@@ -109,18 +126,13 @@ def chat(request):
 
 @login_required
 def get_user_chats(request):
-    username = request.user.username 
-    chats = ChatBot.objects.filter(username=username).order_by('created_at')
-    # 마크다운을 HTML로 변환하여 리스트에 추가
-    chat_data = []
-    for chat in chats:
-        chat_data.append({
-            'username': chat.username,
-            'question': mark_safe(markdown.markdown(chat.question)),
-            'answer': mark_safe(markdown.markdown(chat.answer)),
-            'created_at': chat.created_at,
-        })
-    return JsonResponse({'chats': chat_data})
+    if request.user.is_authenticated:
+        username = request.user.username
+        chats = ChatBot.objects.filter(username=username).order_by('-created_at')
+        chat_data = list(chats.values('question', 'answer', 'created_at'))
+        return JsonResponse({'chats': chat_data})
+    else:
+        return JsonResponse({'error': 'User not authenticated'}, status=401)
 
 
 @csrf_exempt
@@ -146,4 +158,3 @@ def log_interaction(request):
 
         return JsonResponse({"status": "success"}, status=200)
     return JsonResponse({"error": "Invalid request"}, status=400)
-
