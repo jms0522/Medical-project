@@ -105,7 +105,7 @@ rag_chain = (
 #     | StrOutputParser()
 # )
 
-# @login_required
+@login_required
 def ask_question(request):
     if request.method == "POST":
         username = request.user.username
@@ -116,9 +116,9 @@ def ask_question(request):
         try:
             # LangChain을 사용하여 답변 생성
             response_data = rag_chain.invoke(text)  # formatted_docs를 검색 컨텍스트로 사용
-            ChatBot.objects.create(username=username, question=text, answer=response_data, created_at=timezone.now())
+            chat_bot_instance = ChatBot.objects.create(username=username, question=text, answer=response_data, created_at=timezone.now())
             
-            return JsonResponse({"data": response_data}, status=200)
+            return JsonResponse({"id": chat_bot_instance.id, "data": response_data}, status=200)
         except Exception as e:
             logger_error.error(f'Error during question handling: {str(e)}')
             return JsonResponse({"error": str(e)}, status=500)
