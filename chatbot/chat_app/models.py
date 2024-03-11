@@ -20,3 +20,13 @@ class UserInteractionLog(models.Model):
     element_name = models.CharField(max_length=255, null=True, blank=True)
     url = models.URLField(null=True)
     timestamp = models.DateTimeField()
+    
+    
+class SimilarAnswer(models.Model):
+    original_question = models.ForeignKey(ChatBot, on_delete=models.CASCADE, related_name='similar_answers')
+    similar_question = models.TextField(null=True, blank=True)
+    similar_answer = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"Similar answer to question ID {self.original_question.id} created at {self.created_at}"

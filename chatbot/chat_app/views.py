@@ -16,11 +16,11 @@ import chromadb
 # chatbot
 import os
 import pickle
-from .models import ChatBot, UserInteractionLog
+from .models import ChatBot, SimilarAnswer, UserInteractionLog
 import json
 
 # django
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -33,8 +33,8 @@ from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
 logger_interaction = logging.getLogger('drrc')
 logger_error = logging.getLogger('error')
 
-client = chromadb.PersistentClient(path="/Users/baeminseog/Medical-project/chatbot/chroma_db")
-collection_name = "my_collection"
+# client = chromadb.PersistentClient(path="/Users/baeminseog/Medical-project/chatbot/chroma_db")
+# collection_name = "my_collection"
 
 embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 
@@ -44,7 +44,7 @@ embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2"
 # with open('list.pkl', 'rb') as file:
 #     docs = pickle.load(file)
 
-chroma_vectorstore = Chroma(persist_directory="/Users/baeminseog/Medical-project/chatbot/chroma_db", embedding_function=embedding_function)
+chroma_vectorstore = Chroma(persist_directory="Medical-project/chatbot/chroma_db", embedding_function=embedding_function)
 chroma_retriever = chroma_vectorstore.as_retriever(search_kwargs={"k": 5})
 
 # bm25_retriever = BM25Retriever.from_documents(docs)
@@ -89,6 +89,7 @@ def format_docs(docs):
     # 검색한 문서 결과를 하나의 문단으로 합쳐줍니다.
     return "\n\n".join(doc.page_content for doc in docs)
 
+# 의료 답변 랭체인
 rag_chain = (
     {"context": retriever | format_docs, "question": RunnablePassthrough()}
     | prompt
@@ -96,13 +97,18 @@ rag_chain = (
     | StrOutputParser()
 )
 
+# 유사답변 출력 랭체인
+# similar_langchain = (
+#     {"context": retriever | format_docs, "question": RunnablePassthrough()}
+#     | prompt
+#     | llm
+#     | StrOutputParser()
+# )
+
 # @login_required
 def ask_question(request):
     if request.method == "POST":
-        if request.user.is_authenticated:
-            username = request.user.username
-        else:
-            username = None
+        username = request.user.username
         text = request.POST.get("text").strip()
         
         if not text:
@@ -128,22 +134,18 @@ def chat(request):
 
 @login_required
 def get_user_chats(request):
-    if request.user.is_authenticated:
-        username = request.user.username
-        chats = ChatBot.objects.filter(username=username).order_by('-created_at')
-        chat_data = list(chats.values('question', 'answer', 'created_at'))
-        return JsonResponse({'chats': chat_data})
-    else:
-        return JsonResponse({'error': 'User not authenticated'}, status=401)
-
+    username = request.user.username
+    chats = ChatBot.objects.filter(username=username).order_by('created_at')
+    chat_data = list(chats.values('username','question', 'answer', 'created_at'))
+    return JsonResponse({'chats': chat_data})
 
 @csrf_exempt
 def log_interaction(request):
     if request.method == 'POST': # 로그 데이터를 JSON 형식으로 파싱
         data = json.loads(request.body) # 요청에서 사용자 인증 정보를 확인
         # 로그인한 사용자의 경우 사용자 ID를 사용, 그렇지 않은 경우 None
-        username = request.user.username if request.user.is_authenticated else None
-        url = data.get('url') or 'localhost'
+        username = request.user.username
+        url = data.get('url') or 'DrRC'
         log_data = {
             "username": username,
             "event_type": data.get('eventType'),
@@ -163,3 +165,29 @@ def log_interaction(request):
 
 def metrics(request):
     return HttpResponse(generate_latest(), content_type=CONTENT_TYPE_LATEST)
+
+@login_required
+def get_similar_answers(request, question_id):
+    # 사용자 인증 확인과 질문 객체 조회
+    original_question = get_object_or_404(ChatBot, id=question_id, username=request.user.username)
+    
+    # 해당 질문에 대한 유사 답변이 이미 있는지 확인
+    similar_answers = SimilarAnswer.objects.filter(original_question=original_question)
+    
+    if similar_answers.exists():
+        # 유사 답변이 이미 존재하는 경우, 데이터베이스에서 조회하여 반환
+        similar_response_data = similar_answers.first().similar_answer
+    else:
+        # 유사 답변이 존재하지 않는 경우, 새로 생성
+        similar_response_data = rag_chain.invoke(original_question.question)
+        SimilarAnswer.objects.create(
+            original_question=original_question,
+            similar_question=original_question.question,  # 원본 질문
+            similar_answer=similar_response_data,  # 유사한 답변
+        )
+    
+    # 유사한 답변을 클라이언트에 반환
+    return JsonResponse({
+        'similarQuestion': original_question.question, 
+        'similarAnswer': similar_response_data
+    })
