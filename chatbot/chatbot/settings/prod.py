@@ -15,6 +15,12 @@ DATABASES = {
     }
 }
 
+RABBITMQ_USER = os.getenv('RABBITMQ_USER')
+RABBITMQ_PASSWORD = os.getenv('RABBITMQ_PASSWORD')
+RABBITMQ_HOST = os.getenv('RABBITMQ_HOST')
+CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
+
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

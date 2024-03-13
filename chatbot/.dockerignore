@@ -1,0 +1,20 @@
+# .dockerignore
+.idea
+.cache 
+.git
+.gitignore
+.dockerignore
+Dockerfile
+*.md
+*.sh
+*.yml
+*.log
+
+.DS_store
+
+*.md 
+IREADME*.md
+
+scripts
+
+venv/*
