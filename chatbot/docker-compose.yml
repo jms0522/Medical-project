@@ -1,0 +1,65 @@
+version: '3.8'
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./__collect_static:/usr/src/app/__collect_static
+    ports: 
+      - "80:80/tcp"
+      - "443:443"
+    environment:
+      - TZ=Asia/Seoul
+    networks:
+      - web
+    depends_on:
+      - app
+
+  app:
+    container_name: app
+    build: .
+    environment:
+      - DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE}
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
+    volumes:
+      - ./__collect_static:/usr/src/app/__collect_static
+      - ./logs:/app/logs
+    networks:
+      - web
+    depends_on:
+      - rabbitmq
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.7.14-management-alpine # 웹 UI management 툴 포함
+    # 환경변수 설정
+    environment: 
+      - RABBITMQ_USER=${RABBITMQ_USER}
+      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
+    ports:
+      - "5672:5672" # rabbitMQ default port
+      - "15672:15672" # UI를 위한 port
+    networks:
+      - web
+
+  celery:
+    build: .
+    volumes: 
+      - ./:/usr/src/app
+    working_dir: /usr/src/app/
+    # Celery Worker 실행
+    command: > 
+      celery -A chatbot worker --loglevel=info
+    networks:
+      - web
+    depends_on:
+      - app
+      - rabbitmq
+    restart: on-failure
+
+networks:
+  web:
