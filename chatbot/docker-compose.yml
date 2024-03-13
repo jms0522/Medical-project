@@ -19,8 +19,6 @@ services:
   app:
     container_name: app
     build: .
-    environment:
-      - DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE}
     ports:
       - "8000:8000"
     expose:
