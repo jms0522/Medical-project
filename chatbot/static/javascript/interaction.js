@@ -56,7 +56,6 @@ window.addEventListener('error', function(event) {
         eventType: 'error',
         elementId: targetElement.id,
         message: event.message, // 오류 메시지
-        filename: event.filename, // 오류가 발생한 파일
         lineno: event.lineno, // 오류가 발생한 줄 번호
         timestamp: new Date().toISOString(),
     };

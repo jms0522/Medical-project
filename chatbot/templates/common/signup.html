@@ -24,7 +24,10 @@
             <input type="text" class="form-control" name="email" id="email" placeholder="이메일을 입력해주세요"
                    value="{{ form.email.value|default_if_none:'' }}">
         </div>
-        <button type="submit" class="btn btn-primary">가입</button>
+        <button type="submit" class="btn btn-primary" name="singupSignup">가입</button>
     </form>
 </div>
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'javascript/interaction.js' %}"></script>
 {% endblock %}
