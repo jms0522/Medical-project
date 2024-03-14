@@ -1,8 +1,8 @@
 <!-- 네비게이션바 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid card-header bg-info text-white">
-        <a class="navbar-brand" href="{% url 'chat_app:chat' %}" name=navbarMainPage>Dr.RC</a>
-        <button class="navbar-toggler" type="button"
+        <a class="navbar-brand clickEvent" href="{% url 'chat_app:chat' %}" name="navbarMainPage">Dr.RC</a>
+        <button class="navbar-toggler clickEvent" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
@@ -15,14 +15,14 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     {% if user.is_authenticated %}
-                    <a class="nav-link" href="{% url 'common:logout' %}" name=navbarLogout>{{ user.username }} (로그아웃)</a>
+                    <a class="nav-link clickEvent" href="{% url 'common:logout' %}" name="navbarLogout">{{ user.username }} (로그아웃)</a>
                     {% else %}
-                    <a class="nav-link" href="{% url 'common:login' %}" name=navbarLogin>로그인</a>
+                    <a class="nav-link clickEvent" href="{% url 'common:login' %}" name="navbarLogin">로그인</a>
                     {% endif %}
                 </li>
                 <li>
                     {% if not user.is_authenticated %}
-                    <a class="nav-link" href="{% url 'common:signup' %}" name=navbarSignup>회원가입</a>
+                    <a class="nav-link clickEvent" href="{% url 'common:signup' %}" name="navbarSignup">회원가입</a>
                     {% endif %}
                 </li>
             </ul>
