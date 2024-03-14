@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "chat_app",
-    'common.apps.CommonConfig',  
+    'common.apps.CommonConfig',
+    'django_prometheus',
 ]
 
 LOGIN_URL = "/admin/login/"

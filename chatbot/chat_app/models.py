@@ -30,3 +30,47 @@ class SimilarAnswer(models.Model):
 
     def __str__(self):
         return f"Similar answer to question ID {self.original_question.id} created at {self.created_at}"
+    
+class ClickEventLog(models.Model):
+    username = models.CharField(max_length=150, null=True, blank=True)
+    element_class = models.CharField(max_length=255, null=True, blank=True)
+    element_name = models.CharField(max_length=255, null=True, blank=True)
+    url = models.URLField()
+    timestamp = models.DateTimeField()
+
+
+class FormSubmitEventLog(models.Model):
+    username = models.CharField(max_length=150, null=True, blank=True)
+    element_class = models.CharField(max_length=255, null=True, blank=True)
+    element_name = models.CharField(max_length=255, null=True, blank=True)
+    url = models.URLField()
+    timestamp = models.DateTimeField()
+
+
+class ScrollEventLog(models.Model):
+    username = models.CharField(max_length=150, null=True, blank=True)
+    element_class = models.CharField(max_length=255, null=True, blank=True)
+    element_name = models.CharField(max_length=255, null=True, blank=True)
+    url = models.URLField()
+    scrollPosition = models.IntegerField(null=True, blank=True)  # 스크롤 위치 저장
+    timestamp = models.DateTimeField()
+
+
+class PageViewEventLog(models.Model):
+    username = models.CharField(max_length=150, null=True, blank=True)
+    element_class = models.CharField(max_length=255, null=True, blank=True)
+    element_name = models.CharField(max_length=255, null=True, blank=True)
+    url = models.URLField()
+    timestamp = models.DateTimeField()
+
+
+class ErrorLog(models.Model):
+    username = models.CharField(max_length=150, null=True, blank=True)
+    element_class = models.CharField(max_length=255, null=True, blank=True)
+    element_name = models.CharField(max_length=255, null=True, blank=True)
+    url = models.URLField()
+    message = models.CharField(max_length=255, null=True, blank=True)  # 에러 메시지 저장
+    lineno = models.IntegerField(null=True, blank=True)  # 줄 번호
+    timestamp = models.DateTimeField()
+
+

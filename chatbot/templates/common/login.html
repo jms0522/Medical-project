@@ -14,8 +14,11 @@
             <input type="password" class="form-control" name="password" id="password"
                    value="{{ form.password.value|default_if_none:'' }}">
         </div>
-        <button type="submit" class="btn btn-primary">로그인</button>
-        <a class="btn btn-primary" href="{% url 'common:signup' %}">회원가입</a>
+        <button type="submit" class="btn btn-primary" name="loginLogin">로그인</button>
+        <a class="btn btn-primary" href="{% url 'common:signup' %}" name="loginSignup">회원가입</a>
     </form>
 </div>
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'javascript/interaction.js' %}"></script>
 {% endblock %}

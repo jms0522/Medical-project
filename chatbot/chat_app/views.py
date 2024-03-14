@@ -16,7 +16,7 @@ import chromadb
 # chatbot
 import os
 import pickle
-from .models import ChatBot, SimilarAnswer, UserInteractionLog
+from .models import ChatBot, SimilarAnswer
 import json
 
 # django
@@ -25,6 +25,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
+from .models import UserInteractionLog, ClickEventLog, FormSubmitEventLog, ScrollEventLog, PageViewEventLog, ErrorLog
 from .tasks import save_log
 import logging
 from django.http import HttpResponse
@@ -143,24 +144,40 @@ def get_user_chats(request):
 def log_interaction(request):
     if request.method == 'POST': # 로그 데이터를 JSON 형식으로 파싱
         data = json.loads(request.body) # 요청에서 사용자 인증 정보를 확인
-        # 로그인한 사용자의 경우 사용자 ID를 사용, 그렇지 않은 경우 None
-        username = request.user.username
-        url = data.get('url') or 'DrRC'
-        log_data = {
-            "username": username,
-            "event_type": data.get('eventType'),
-            "element_id": data.get('elementId'),
-            "element_class": data.get('elementClass'),
-            "element_type": data.get('elementType'),
-            "element_name": data.get('elementName'),
-            "url": url,
-            "timestamp": timezone.now().isoformat()  # isoformat을 사용하여 직렬화
-        }       
-        save_log.delay(log_data)
-        
-        logger_interaction.info(f"User interaction by {username}: {data}") # 사용자 아이디를 로그 메시지에 포함(로깅)
+        event_type = data.get('eventType')
 
+        # 공통 데이터 추출
+        common_data = {
+            "username": request.user.username if request.user.is_authenticated else None,
+            "element_class": data.get('elementClass'),
+            "element_name": data.get('elementName'),
+            "url": data.get('url', 'unknown'),
+            "timestamp": timezone.now(),
+        }
+
+        # 이벤트 유형별 데이터 처리 및 저장
+        if event_type == 'click':
+            ClickEventLog.objects.create(**common_data)
+        elif event_type == 'formSubmit':
+            FormSubmitEventLog.objects.create(**common_data)
+        elif event_type == 'scroll':
+            ScrollEventLog.objects.create(scrollPosition=data.get('scrollPosition'), **common_data)
+        elif event_type == 'pageView':
+            PageViewEventLog.objects.create(**common_data)
+        elif event_type == 'error':
+            error_specific_data = {
+                "message": data.get('message'),
+                "lineno": data.get('lineno', None),
+            }
+            ErrorLog.objects.create(**{**common_data, **error_specific_data})
+        else:
+            # 처리할 수 없는 이벤트 유형에 대한 처리
+            return JsonResponse({"error": "Unsupported event type"}, status=400)
+
+        # 성공적으로 데이터가 처리된 경우
         return JsonResponse({"status": "success"}, status=200)
+
+    # POST 요청이 아닌 경우
     return JsonResponse({"error": "Invalid request"}, status=400)
 
 def metrics(request):

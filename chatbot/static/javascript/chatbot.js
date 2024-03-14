@@ -65,6 +65,7 @@ messageForm.addEventListener('submit', (event)=> {
         similarAnswersButton.textContent = "유사 답변 보기";
         similarAnswersButton.classList.add('show-similar-answers', 'btn', 'btn-secondary');
         similarAnswersButton.setAttribute('data-question-id', questionId);
+        similarAnswersButton.setAttribute('name', 'similarAnswersButton'); 
 
         // 유사 답변 보기 버튼에 대한 이벤트 리스너를 직접 추가
         similarAnswersButton.addEventListener('click', function() {

@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from django.conf.urls.static import static
+from django_prometheus.exports import ExportToDjangoView
 from .views import log_interaction, get_user_chats, metrics, get_similar_answers
 
 app_name = 'chat_app'
