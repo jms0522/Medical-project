@@ -1,17 +1,22 @@
-document.addEventListener('click', function(event) {
-    const targetElement = event.target;
-    if (targetElement.id || targetElement.className) {
-        const data = {
-            eventType: 'click',
-            elementId: targetElement.id,
-            elementClass: targetElement.className, // 클래스 이름
-            elementType: targetElement.tagName, // 타입(예: BUTTON, A 등)
-            elementName: targetElement.name, // name 속성
-            timestamp: new Date().toISOString(),
-        };
-        sendLogData(data);
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    // 상위 요소에서 이벤트 위임을 사용하여 클릭 이벤트 처리
+    document.querySelector('.navbar').addEventListener('click', function(event) {
+        // 이벤트가 발생한 요소가 .clickEvent 클래스를 가지고 있는지 확인
+        if (event.target.classList.contains('clickEvent')) {
+            const targetElement = event.target;
+            const data = {
+                eventType: 'click',
+                elementId: targetElement.id,
+                elementClass: targetElement.className,
+                elementType: targetElement.tagName,
+                elementName: targetElement.getAttribute('name'),
+                timestamp: new Date().toISOString(),
+            };
+            sendLogData(data);
+        }
+    });
 });
+
 
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault(); // 폼의 기본 제출 동작을 방지
