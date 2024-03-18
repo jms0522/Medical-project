@@ -118,7 +118,6 @@ def get_similar_answers_chain():
         | StrOutputParser()
     )
 
-
 def handle_question(username, text):
     try:
         question_chain = get_question_handling_chain()  # 질문 처리용 모델 호출
