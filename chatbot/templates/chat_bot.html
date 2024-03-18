@@ -1,43 +1,70 @@
 {% extends 'base.html' %}
 {% block title %}Dr.RC{% endblock %}
-{% load static %}  <!-- 정적 파일 태그를 사용하기 위해 필요합니다. -->
+{% load static %}
 {% block styles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<link href="{% static 'css/chatbot.css' %}" rel="stylesheet">
 {% endblock %}
 {% block content %}
-<div class="chat-container">
-    <div class="card flex-grow-1">
-            <div class="card-body messages-box">
-                <ul class="list-unstyled messages-list">
-                    <li class="message received">
-                        <div class="message-text">
-                            <div class="message-sender">
-                                <b>Dr.RC</b>
-                            </div>
-                            <div class="message-content">
-                                안녕하세요. 당신의 의료 상담 챗봇 Dr.RC입니다.<br>
-                                증상을 말씀해주시면 도와드리도록 하겠습니다. 
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+    <div class="flex flex-col md:flex-row justify-start items-start w-full mt-4">
+        <div class="flex justify-start items-center gap-6 flex-nowrap">
+            <img class="w-20 h-20 rounded-full" src="{% static 'images/drrc.jpeg' %}" />
+            <div class="flex-col justify-center items-center">
             </div>
-            <br><br>
-            <br><br>
-            <br><br>
         </div>
-        <form class="message-form">
-            {% csrf_token %}
-            <div class="input-group">
-            <input type="text" class="form-control message-input clickEvent" placeholder="증상을 설명해주세요.">
-            <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-send clickEvent" name="answersButton">보내기</button>
-            </div>
-            </div>
-        </form>
     </div>
+    <br>
+    <div class="w-full h-[calc(100vh-10vh)] pt-10 bg-neutral-300 flex-col justify-end items-center flex overflow-hidden">
+        <ul class="messages-list w-full overflow-auto px-5">
+        <!-- 대화 목록을 담을 ul 요소 추가 -->
+        </ul>
+        <div class="loading-bar">
+            <div class="loading-block"></div>
+            <div class="loading-block"></div>
+            <div class="loading-block"></div>
+            <div class="loading-block"></div>
+        </div>
+    </div>
+    <div class="self-stretch max-h-96 pl-11 py-1.5 flex-col justify-start items-start gap-3 flex overflow-auto"></div>
+    <form class="message-form flex justify-between items-center w-full">
+        {% csrf_token %}
+        <div class="flex-grow flex-shrink basis-0 justify-start items-center gap-4 flex">
+            <div class="flex-grow flex-shrink min-w-0 bg-black bg-opacity-10 rounded-lg mb-3">
+                <input type="text" placeholder="메세지를 입력하세요" class="message-input w-full h-16 px-4 py-2.5 text-slate-900 bg-transparent text-opacity-50 text-xl font-medium leading-10">
+            </div>
+        </div>
+        <div class="flex justify-start items-start gap-3 mt-4 md:mt-0">
+            <button type="submit" class="w-14 h-14 flex justify-center items-center">
+                <svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="ri-send-plane-fill" clip-path="url(#clip0_2_1752)">
+                        <g id="Group">
+                            <path id="Vector" d="M4.37838 21.6355C3.20388 21.244 3.19263 20.6117 4.40088 20.209L47.3466 5.89448C48.5369 5.49848 49.2186 6.16448 48.8856 7.32998L36.6141 50.2735C36.2766 51.4637 35.5904 51.5042 35.0864 50.3747L26.9999 32.1767L40.4999 14.1767L22.4999 27.6767L4.37838 21.6355Z" fill="#A6ADB5"/>
+                        </g>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_2_1752">
+                            <rect width="54" height="54" fill="white" transform="translate(0 0.676758)"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </button>
+        </div>
+    </form>
+{% if messages %}
+    <script>
+        window.onload = function() {
+            {% for message in messages %}
+                alert("{{ message }}");
+            {% endfor %}
+        }
+    </script>
+{% endif %}
+
 {% endblock %}
 {% block scripts %}
     <script type="text/javascript" src="{% static 'javascript/chatbot.js' %}"></script>
+    <script type="text/javascript">
+        // Django 템플릿 태그를 사용하여 사용자의 로그인 상태를 확인합니다.
+        var isLoggedIn = {% if user.is_authenticated %}true{% else %}false{% endif %};
+    </script>
     <script type="text/javascript" src="{% static 'javascript/interaction.js' %}"></script>
 {% endblock %}

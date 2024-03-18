@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Dr.RC{% endblock %}
+{% load static %}  <!-- 정적 파일 태그를 사용하기 위해 필요합니다. -->
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% endblock %}
+{% block content %}
+<div class="chat-container">
+    <div class="card flex-grow-1">
+        <div class="card-body messages-box">
+            <ul class="list-unstyled messages-list">
+                <li class="message received">
+                    <div class="message-text">
+                        <div class="message-sender">
+                            <b>Dr.RC</b>
+                        </div>
+                        <div class="message-content">
+                            안녕하세요. 당신의 의료 상담 챗봇 Dr.RC입니다.<br>
+                            증상을 말씀해주시면 도와드리도록 하겠습니다. 
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <br><br>
+        <br><br>
+        <br><br>
+    </div>
+    <form class="message-form">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" class="form-control message-input clickEvent" placeholder="증상을 설명해주세요.">
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary btn-send clickEvent" name="answersButton">보내기</button>
+        </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'javascript/chatbot.js' %}"></script>
+    <script type="text/javascript" src="{% static 'javascript/interaction.js' %}"></script>
+{% endblock %}
+

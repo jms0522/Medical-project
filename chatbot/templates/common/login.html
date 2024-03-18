@@ -1,26 +1,68 @@
-{% extends "base.html" %}
+{% extends 'common/base_common.html' %}
 {% block title %}Dr.RC{% endblock %}
-{% load static %}
+{% load static %}  <!-- 정적 파일 태그를 사용하기 위해 필요합니다. -->
+{% block styles %}
+{% endblock %}
 {% block content %}
-<div class="container my-3">
-    <form method="post" action="{% url 'common:login' %}">
-        {% csrf_token %}
-        {% include "form_errors.html" %}
-        <div class="mb-3">
-            <label for="username">사용자ID</label>
-            <input type="text" class="form-control clickEvent" name="username" id="username"
-                   value="{{ form.username.value|default_if_none:'' }}">
+<div class="main-container">
+    <div class="outer-container">
+        <br><br>
+        <div class="content">Dr.RC는 누구나 무료로 <br>질문할 수 있는 실시간 <br>의료 상담 AI 챗봇입니다</div>
+        <br>
+        <div class="circle-group">
+            <div class="decorative-circle large"></div>
+            <div class="decorative-circle medium"></div>
+            <div class="decorative-circle small"></div>
         </div>
-        <div class="mb-3">
-            <label for="password">비밀번호</label>
-            <input type="password" class="form-control clickEvent" name="password" id="password"
-                   value="{{ form.password.value|default_if_none:'' }}">
+    </div>
+    <div class="container">
+        <br>
+        <div style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: center; gap: 6px; display: inline-flex">
+            <div style="text-align: center; color: #878D96; font-size: 16px; font-family: Pretendard; font-weight: 400; line-height: 24px; word-wrap: break-word">로그인 하고 Dr.RC를 무료로 시작해보세요</div>
+            <div style="text-align: center; color: #212B36; font-size: 33px; font-family: Pretendard; font-weight: 700; line-height: 45px; word-wrap: break-word">로그인</div>
         </div>
-        <button type="submit" class="btn btn-primary clickEvent" name="loginLogin">로그인</button>
-        <a class="btn btn-primary clickEvent" href="{% url 'common:signup' %}" name="loginSignup">회원가입</a>
-    </form>
+        <form class="form-container" action="{% url 'common:login' %}" method="post">
+            {% csrf_token %}
+            <div class="input-group {% if form.username.errors %}has-error{% endif %}">
+                <label for="username">Email</label>
+                <input type="text" name="username" id="username" placeholder="사용하실 이메일을 입력하세요" class="{% if form.username.errors %}input-error{% endif %}" value="{{ form.username.value|default_if_none:'' }}">
+                {% for error in form.username.errors %}
+                    <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="input-group {% if form.password.errors %}has-error{% endif %}">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="사용하실 비밀번호를 입력하세요" class="{% if form.password.errors %}input-error{% endif %}">
+                {% for error in form.password.errors %}
+                    <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% if form.non_field_errors %}
+                <div class="error-message">
+                    {% for error in form.non_field_errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="section" style="flex-direction: column;">
+                <button type="submit" class="button">이메일로 로그인 하기</button>
+                <div style="width: 380px; justify-content: center; align-items: center; gap: 16px; display: flex">
+                    <div style="flex-grow: 1; height: 1px; background-color: #C1C7CD;"></div>
+                    <span style="color: #C1C7CD; font-size: 16px; font-weight: 400;">또는</span>
+                    <div style="flex-grow: 1; height: 1px; background-color: #C1C7CD;"></div>
+                </div>
+                <a href="{% url 'common:kakao_login' %}" class="button alt kakao-login">
+                    <img src="{% static 'images/kakao_talk.svg' %}" alt="Kakao" class="kakao-icon">
+                    카카오톡으로 회원 로그인하기</a>
+            </div>
+            <div class="signup-reminder">
+                <span style="color: #878D96">아직 계정이 없으신가요? </span><a href="{% url 'common:signup' %}" style="color: #1B212F;">회원 가입하기</a>
+            </div>
+        </form>
+        
+    </div>
 </div>
 {% endblock %}
 {% block scripts %}
-    <script type="text/javascript" src="{% static 'javascript/interaction.js' %}"></script>
+{% comment %} <script type="text/javascript" src="{% static 'javascript/interaction.js' %}"></script> {% endcomment %}
 {% endblock %}

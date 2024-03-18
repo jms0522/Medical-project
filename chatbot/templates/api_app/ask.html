@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Dr.RC{% endblock %}
+{% load static %}  <!-- 정적 파일 태그를 사용하기 위해 필요합니다. -->
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/map.css' %}">
+{% endblock %}
+{% block content %}
+<iframe src="http://43.201.236.125:5601/app/dashboards?auth_provider_hint=anonymous1#/view/cfa2cfb8-552d-490a-bbfa-feb20ac4bc16?embed=true&_g=(refreshInterval%3A(pause%3A!t%2Cvalue%3A60000)%2Ctime%3A(from%3Anow-15m%2Cto%3Anow))&show-top-menu=true&show-query-input=true&show-time-filter=true" height="600" width="800"></iframe>{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'javascript/interaction.js' %}"></script>
+{% endblock %}
