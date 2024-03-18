@@ -5,7 +5,7 @@ services:
     image: nginx:latest
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./__collect_static:/usr/src/app/__collect_static
+      - ./staticfiles:/usr/src/app/staticfiles
     ports: 
       - "80:80/tcp"
       - "443:443"
@@ -15,6 +15,7 @@ services:
       - web
     depends_on:
       - app
+    restart: always
 
   app:
     container_name: app
@@ -24,12 +25,17 @@ services:
     expose:
       - "8000"
     volumes:
-      - ./__collect_static:/usr/src/app/__collect_static
+      - ./staticfiles:/usr/src/app/staticfiles
+      - ./templates:/usr/src/app/templates
+      - ./chat_app:/usr/src/app/chat_app
+      - ./api_app:/usr/src/app/api_app
+      - ./common:/usr/src/app/common
       - ./logs:/app/logs
     networks:
       - web
     depends_on:
       - rabbitmq
+    restart: always
 
   rabbitmq:
     container_name: rabbitmq
@@ -43,6 +49,7 @@ services:
       - "15672:15672" # UI를 위한 port
     networks:
       - web
+    restart: always
 
   celery:
     build: .
@@ -57,7 +64,7 @@ services:
     depends_on:
       - app
       - rabbitmq
-    restart: on-failure
+    restart: always
 
   rabbitmq_exporter:
     container_name: rabbitmq_exporter
@@ -72,6 +79,8 @@ services:
       - web
     depends_on:
       - rabbitmq
+    restart: always
 
 networks:
   web:
+    external: true

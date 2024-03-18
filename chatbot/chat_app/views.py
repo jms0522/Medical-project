@@ -6,12 +6,13 @@ import json
 # django
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse, HttpResponseNotAllowed
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 from .models import ClickEventLog, FormSubmitEventLog, ScrollEventLog, PageViewEventLog, ErrorLog
-from .tasks import save_log
+from .tasks import save_log, handle_question_task, fetch_similar_answers_task
 import logging
 from django.http import HttpResponse
 from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
@@ -20,31 +21,26 @@ logger_interaction = logging.getLogger('drrc')
 logger_error = logging.getLogger('error')
 
 @login_required_ajax
+@require_POST  # POST 요청만 허용
 def ask_question(request):
-    if request.method == "POST":
-        text = request.POST.get("text", "").strip()
-        
-        if not text:
-            return JsonResponse({"error": "Empty question."}, status=400)
-        
-        # 비즈니스 로직을 services.py에서 제공하는 함수를 호출하여 수행
-        return handle_question(request.user.username, text)
+    text = request.POST.get("text", "").strip()
+    if not text:
+        return JsonResponse({"error": "Empty question."}, status=400)
     
-    # GET 요청이나 다른 메소드에 대해 HttpResponseNotAllowed를 반환
-    # 'POST'만 허용된다는 의미
-    return HttpResponseNotAllowed(['POST'])
+    # 비동기 작업으로 질문 처리 Task 호출
+    handle_question_task.delay(request.user.username, text)
+    
+    return JsonResponse({"status": "Processing your question..."}, status=202)
 
 @login_required
 def get_similar_answers(request, question_id):
-    username = request.user.username
-    # fetch_similar_answers 함수 호출
-    response = fetch_similar_answers(question_id, username)
-    # fetch_similar_answers 함수가 JsonResponse 객체를 반환하므로,
-    # 여기서는 해당 객체를 그대로 반환합니다.
-    return response
+    # 비동기 작업으로 유사 답변 검색 Task 호출
+    fetch_similar_answers_task.delay(question_id, request.user.username)
+    
+    return JsonResponse({"status": "Fetching similar answers..."}, status=202)
 
 def chat(request):
-    # 사용자가 로그인한 경우와 로그인하지 않은   경우를 구분하여 처리
+    # 사용자가 로그인한 경우와 로그인하지 않은 경우를 구분하여 처리
     if request.user.is_authenticated:
         username = request.user.username
     else:

@@ -1,8 +1,12 @@
 # tasks.py
 from celery import shared_task
-from .models import ClickEventLog, FormSubmitEventLog, ScrollEventLog, PageViewEventLog, ErrorLog
+from .models import ClickEventLog, FormSubmitEventLog, ScrollEventLog, PageViewEventLog, ErrorLog, ChatBot, SimilarAnswer
 from django.contrib.auth.models import User
 from django.utils.dateparse import parse_datetime
+from django.utils import timezone
+from django.shortcuts import get_object_or_404
+from .services import get_question_handling_chain, get_similar_answers_chain
+import json
 
 @shared_task
 def save_log(log_data):
@@ -33,3 +37,32 @@ def save_log(log_data):
             "lineno": log_data.get('lineno', None),
         }
         ErrorLog.objects.create(**{**common_data, **error_specific_data})
+
+@shared_task
+def handle_question_task(username, text):
+    try:
+        question_chain = get_question_handling_chain()  # 질문 처리용 모델 호출
+        response_data = question_chain.invoke(text)
+        chat_bot_instance = ChatBot.objects.create(username=username, question=text, answer=response_data, created_at=timezone.now())
+        return {"id": chat_bot_instance.id, "data": response_data}
+    except Exception as e:
+        return {"error": str(e)}
+    
+@shared_task
+def fetch_similar_answers_task(question_id, username):
+    try:
+        original_question = get_object_or_404(ChatBot, id=question_id, username=username)
+        similar_chain = get_similar_answers_chain()
+        similar_answer = similar_chain.invoke(original_question.question)
+        
+        similar_answer_instance, created = SimilarAnswer.objects.get_or_create(
+            original_question=original_question,
+            defaults={'similar_answer': similar_answer}
+        )
+        if not created:
+            similar_answer_instance.similar_answer = similar_answer
+            similar_answer_instance.save()
+
+        return {"id": similar_answer_instance.id, "similarAnswer": similar_answer}
+    except Exception as e:
+        return {"error": str(e)}

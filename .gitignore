@@ -63,6 +63,10 @@ cover/
 *.mo
 *.pot
 
+staticfiles/
+**/staticfiles/
+
+
 # Django stuff:
 *.log
 local_settings.py

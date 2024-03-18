@@ -30,7 +30,7 @@ def format_docs(docs):
 
 # 질문 처리용 LangChain 모델 설정
 def get_question_handling_chain():
-    chroma_client = chromadb.HttpClient(host="43.201.236.125", port=8000)
+    chroma_client = chromadb.HttpClient(host="43.201.236.125", port=8001)
     # 임베딩 함수 설정
     embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
     # Chroma 인스턴스 생성
@@ -74,7 +74,7 @@ def get_question_handling_chain():
 # 유사한 답변 찾기용 LangChain 모델 설정
 def get_similar_answers_chain():
     # Chroma 클라이언트 및 컬렉션 설정
-    chroma_client = chromadb.HttpClient(host="43.201.236.125", port=8000)
+    chroma_client = chromadb.HttpClient(host="43.201.236.125", port=8001)
     collection = chroma_client.get_or_create_collection(name="drrc_collection")
     # 임베딩 함수 설정
     embedding_function = SentenceTransformerEmbeddings(model_name="jhgan/ko-sbert-nli")
