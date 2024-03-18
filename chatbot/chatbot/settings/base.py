@@ -200,6 +200,13 @@ LOGGING = {
             'backupCount': 5,
             'formatter': 'standard',
         },
+        'logstash': {
+            'level': 'INFO',
+            'class': 'logstash.TCPLogstashHandler',
+            'host': 'localhost',
+            'port': 5959,  # Default value: 5959
+            'version': 1,
+        },
     },
     'loggers': {
         'django': {
@@ -219,5 +226,9 @@ LOGGING = {
             'handlers': ['console', 'error'],
             'level': 'INFO',
         },
+        'logstash': {
+            'handlers': ['logstash'],   # 로그 레코드를 logstash handler로 전달
+        },
+    },
     }
 }
