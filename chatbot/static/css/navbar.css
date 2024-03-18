@@ -1,0 +1,28 @@
+.navbar-center {
+    display: flex;
+    justify-content: space-between; /* 항목을 양 끝으로 정렬 */
+    align-items: center; /* 중앙에 항목을 정렬 */
+    padding: 1rem; /* 상단과 하단의 패딩 조정 */
+    width: 100%; /* 전체 너비 사용 */
+}
+
+.button-custom {
+    text-decoration: none;
+    color: white;
+    background-color: #2563EB; /* 버튼 배경색 */
+    padding: 8px 16px; /* 패딩 조정 */
+    border-top-right-radius: 24px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 24px;
+    font-size: 14px; /* 글꼴 크기 */
+    margin: 0 8px; /* 마진 조정 */
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 항목들을 세로 중앙 정렬 */
+    justify-content: center; /* 내용을 가로 중앙 정렬 */
+}
+
+@media (max-width: 400px) {
+    .navbar {
+        display: none;
+    }
+}

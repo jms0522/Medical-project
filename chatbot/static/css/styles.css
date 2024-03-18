@@ -1,6 +1,6 @@
 body, html {
-    padding-top: 35px;
     height: 100%;
+    min-height: 100%;
 }
 
 .navbar {

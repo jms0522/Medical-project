@@ -24,7 +24,6 @@ class UserInteractionLog(models.Model):
     
 class SimilarAnswer(models.Model):
     original_question = models.ForeignKey(ChatBot, on_delete=models.CASCADE, related_name='similar_answers')
-    similar_question = models.TextField(null=True, blank=True)
     similar_answer = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
 

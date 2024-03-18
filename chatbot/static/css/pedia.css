@@ -1,0 +1,97 @@
+.page-title {
+    font-size: 2.5rem; /* 제목의 크기 */
+    font-weight: bold; /* 글자 두께 */
+    color: #333; /* 글자 색상 */
+    margin-bottom: 20px; /* 제목 아래의 여백 */
+    text-align: center; /* 제목을 가운데 정렬 */
+}
+
+.title-with-icon {
+    display: flex;
+    align-items: center; /* 중앙 정렬 */
+}
+
+.title-icon {
+width: 50px; /* 아이콘 크기 조정 */
+height: auto;
+margin-right: 10px; /* 제목과의 간격 */
+}
+
+.pedia-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9; /* 배경색 */
+    height: calc(100vh - 10vh - 40px); /* 전체 높이에서 네비게이션 바 높이와 padding 제외 */
+    overflow-y: auto; /* 필요시 세로 스크롤바 표시 */
+}
+
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #45a049;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-result-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-result-item {
+    background-color: #f0f8ff; /* 희미한 하늘색 배경 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    padding: 15px; /* 안쪽 여백 */
+    margin-bottom: 15px; /* 아래쪽 마진 */
+}
+
+.search-result-item h3 {
+    margin: 0 0 10px 0; /* 마진 조정 */
+    font-size: 1.5em; /* 폰트 크기 */
+    font-weight: bold; /* 굵은 폰트 */
+}
+
+.search-result-item h3 a {
+    color: #007BFF; /* 제목 링크 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.search-result-item h3 a:hover {
+    text-decoration: underline; /* 마우스 오버시 밑줄 표시 */
+}
+
+.search-result-item p {
+    font-size: 1em; /* 폰트 크기 */
+    color: #333; /* 폰트 색상 */
+    line-height: 1.5; /* 줄 간격 */
+    margin: 0; /* 마진 제거 */
+}

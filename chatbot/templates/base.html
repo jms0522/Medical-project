@@ -1,21 +1,26 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
+  <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
   <title>{% block title %}{% endblock %}</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   {% block styles %}{% endblock %}
 </head>
 <body>
 <!-- 네비게이션바 -->
-{% include "navbar.html" %}
-{% block content %}{% endblock %}
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="max-w-full mx-auto flex h-[calc(100vh-10vh)] flex-row justify-stretch overflow-hidden">
+  {% include "navbar.html" %}
+  <div class="flex flex-col w-full px-7 py-10">
+    {% block content %}{% endblock %}
+  </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script type="text/javascript" src="{% static 'javascript/interaction.js' %}"></script>
 {% block scripts %}{% endblock %}
 </body>
 </html>

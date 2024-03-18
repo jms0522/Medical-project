@@ -1,31 +1,135 @@
-<!-- 네비게이션바 -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <div class="container-fluid card-header bg-info text-white">
-        <a class="navbar-brand clickEvent" href="{% url 'chat_app:chat' %}" name="navbarMainPage">Dr.RC</a>
-        <button class="navbar-toggler clickEvent" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                name="navbarToggler">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    {% if user.is_authenticated %}
-                    <a class="nav-link clickEvent" href="{% url 'common:logout' %}" name="navbarLogout">{{ user.username }} (로그아웃)</a>
-                    {% else %}
-                    <a class="nav-link clickEvent" href="{% url 'common:login' %}" name="navbarLogin">로그인</a>
-                    {% endif %}
-                </li>
-                <li>
-                    {% if not user.is_authenticated %}
-                    <a class="nav-link clickEvent" href="{% url 'common:signup' %}" name="navbarSignup">회원가입</a>
-                    {% endif %}
-                </li>
-            </ul>
+{% load static %} 
+
+<div class="navbar w-96 h-96 px-5 pt-9 flex-col justify-start items-start gap-10 inline-flex flex">
+    <div class="justify-start items-start gap-1 inline-flex">
+    </div>
+    <div class="pl-2 flex-col justify-start gap-11 flex">
+        <div class="w-full justify-start items-center gap-2 inline-flex flex-col">
+            <div class="w-40 h-11 px-7 ml-7">
+                <a class="clickEvent" href="{% url 'chat_app:chat' %}" name="navbarMainPage">
+                    <span class="text-slate-900 text-3xl font-bold font-['Poppins']">Dr.</span>
+                    <span class="text-blue-600 text-3xl font-medium font-['Poppins']">RC</span>
+                </a>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="flex-col pt-3 justify-center items-center gap-4 inline-flex">
+                <img class="w-40 h-40 rounded-full" src="{% static '/images/unknownUser.png' %}" alt="User Image" />
+                <div class="text-slate-900 text-2xl font-medium font-['Poppins'] leading-normal">{{ user.username }}</div>
+            </div>
+            {% else %}
+            <a href="{% url 'common:login' %}" class="flex-col justify-center items-center gap-4 inline-flex">
+                <img class="w-40 h-40 rounded-full" src="{% static '/images/unknownUser.png' %}" alt="Unknown User" />
+                <div class="text-slate-900 text-2xl font-medium font-['Poppins'] leading-normal">로그인 필요</div>
+            </a>
+            {% endif %}
+            <div class="navbar-center w-full flex-row"> 
+                {% if user.is_authenticated %}
+                    <a class="clickEvent button-custom" href="{% url 'common:logout' %}" name="navbarLogout" style="min-width: 85px;">
+                        로그아웃
+                    </a>
+                    <a class="clickEvent button-custom" href="{% url 'common:profile' %}" name="navbarProfile" style="min-width: 93px;">
+                        마이페이지
+                    </a>
+                {% else %}
+                    <a class="clickEvent button-custom" href="{% url 'common:signup' %}" name="navbarSignup" style="min-width: 85px;">
+                        회원가입
+                    </a>
+                    <a class="clickEvent button-custom" href="{% url 'common:login' %}" name="navbarLogin" style="min-width: 85px;">
+                        로그인
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    
+        
+        <div class="flex-col justify-start items-start gap-11 flex">
+            <div class="px-7 py-2.5 bg-blue-600 rounded-tr-3xl rounded-bl-2xl rounded-br-3xl shadow justify-center items-center gap-2.5 inline-flex">
+                <div class="w-6 h-6 flex justify-center items-center">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="ri-message-3-fill" clip-path="url(#clip0_2_1638)">
+                        <g id="Group">
+                        <path id="Vector" d="M2 9.95348C1.99947 9.16569 2.15435 8.38552 2.45577 7.65767C2.75718 6.92981 3.19921 6.26856 3.75655 5.71178C4.31388 5.15501 4.97558 4.71364 5.70373 4.41295C6.43189 4.11226 7.21221 3.95817 8 3.95948H16C19.313 3.95948 22 6.65448 22 9.95348V21.9595H8C4.687 21.9595 2 19.2645 2 15.9655V9.95348ZM14 11.9595V13.9595H16V11.9595H14ZM8 11.9595V13.9595H10V11.9595H8Z" fill="white"/>
+                        </g>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_2_1638">
+                        <rect width="24" height="24" fill="white" transform="translate(0 0.959473)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>                            
+                </div>
+                <div class="text-white text-2xl font-medium font-['Poppins']">
+                    <a class="clickEvent" href="{% url 'chat_app:chat' %}" name="navbarMainPage">
+                        닥터에게 질문하기
+                    </a>
+                </div>
+            </div>
+            <div class="self-stretch h-80 flex-col justify-start items-start gap-9 flex">
+                <div class="justify-start items-start gap-2.5 inline-flex">
+                    <a class="clickEvent flex items-center gap-2.5" href="{% url 'api_app:map' %}" name="navbarMap">
+                        <div class="w-6 h-6 flex justify-center items-center">
+                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="ri-group-2-fill" clip-path="url(#clip0_2_1645)">
+                                <g id="Group">
+                                <path id="Vector" d="M10 20.7075V17.3595C10 16.0765 10.995 15.0675 12.467 14.4915C11.5177 14.1384 10.5128 13.9582 9.5 13.9595C7.61 13.9595 5.864 14.5765 4.453 15.6195C4.89051 16.8568 5.62509 17.9678 6.59225 18.8549C7.55941 19.7421 8.72957 20.3782 10 20.7075ZM18.88 17.0455C18.485 16.5125 17.17 15.9595 15.5 15.9595C13.494 15.9595 12 16.7565 12 17.3595V20.9595C13.3878 20.9602 14.752 20.5998 15.9583 19.9135C17.1646 19.2273 18.1715 18.2388 18.88 17.0455ZM9.55 12.4595C10.1467 12.4595 10.719 12.2224 11.141 11.8005C11.5629 11.3785 11.8 10.8062 11.8 10.2095C11.8 9.61274 11.5629 9.04044 11.141 8.61848C10.719 8.19653 10.1467 7.95947 9.55 7.95947C8.95326 7.95947 8.38097 8.19653 7.95901 8.61848C7.53705 9.04044 7.3 9.61274 7.3 10.2095C7.3 10.8062 7.53705 11.3785 7.95901 11.8005C8.38097 12.2224 8.95326 12.4595 9.55 12.4595ZM15.5 13.4595C16.0304 13.4595 16.5391 13.2488 16.9142 12.8737C17.2893 12.4986 17.5 11.9899 17.5 11.4595C17.5 10.929 17.2893 10.4203 16.9142 10.0453C16.5391 9.67019 16.0304 9.45947 15.5 9.45947C14.9696 9.45947 14.4609 9.67019 14.0858 10.0453C13.7107 10.4203 13.5 10.929 13.5 11.4595C13.5 11.9899 13.7107 12.4986 14.0858 12.8737C14.4609 13.2488 14.9696 13.4595 15.5 13.4595ZM12 22.9595C6.477 22.9595 2 18.4825 2 12.9595C2 7.43647 6.477 2.95947 12 2.95947C17.523 2.95947 22 7.43647 22 12.9595C22 18.4825 17.523 22.9595 12 22.9595Z" fill="#001835"/>
+                                </g>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_2_1645">
+                                <rect width="24" height="24" fill="white" transform="translate(0 0.959473)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>                                
+                        </div>
+                        <div class="text-slate-900 text-2xl font-medium font-['Poppins'] leading-normal">
+                            병원/약국찾기
+                        </div>
+                    </a>
+                </div>
+                <div class="justify-start items-start gap-2.5 inline-flex">
+                    <a class="clickEvent flex items-center gap-2.5" href="{% url 'api_app:pedia' %}" name="navbarSearch">
+                        <div class="w-6 h-6 flex justify-center items-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="ri-contacts-book-2-fill" clip-path="url(#clip0_2_1651)">
+                                <g id="Group">
+                                <path id="Vector" d="M20 22.9595H6C5.20435 22.9595 4.44129 22.6434 3.87868 22.0808C3.31607 21.5182 3 20.7551 3 19.9595V5.95947C3 5.16382 3.31607 4.40076 3.87868 3.83815C4.44129 3.27554 5.20435 2.95947 6 2.95947H20C20.2652 2.95947 20.5196 3.06483 20.7071 3.25237C20.8946 3.4399 21 3.69426 21 3.95947V21.9595C21 22.2247 20.8946 22.479 20.7071 22.6666C20.5196 22.8541 20.2652 22.9595 20 22.9595ZM19 20.9595V18.9595H6C5.73478 18.9595 5.48043 19.0648 5.29289 19.2524C5.10536 19.4399 5 19.6943 5 19.9595C5 20.2247 5.10536 20.479 5.29289 20.6666C5.48043 20.8541 5.73478 20.9595 6 20.9595H19ZM12 10.9595C12.5304 10.9595 13.0391 10.7488 13.4142 10.3737C13.7893 9.99861 14 9.48991 14 8.95947C14 8.42904 13.7893 7.92033 13.4142 7.54526C13.0391 7.17019 12.5304 6.95947 12 6.95947C11.4696 6.95947 10.9609 7.17019 10.5858 7.54526C10.2107 7.92033 10 8.42904 10 8.95947C10 9.48991 10.2107 9.99861 10.5858 10.3737C10.9609 10.7488 11.4696 10.9595 12 10.9595ZM9 14.9595H15C15 14.1638 14.6839 13.4008 14.1213 12.8382C13.5587 12.2755 12.7956 11.9595 12 11.9595C11.2044 11.9595 10.4413 12.2755 9.87868 12.8382C9.31607 13.4008 9 14.1638 9 14.9595Z" fill="#001835"/>
+                                </g>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_2_1651">
+                                <rect width="24" height="24" fill="white" transform="translate(0 0.959473)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>                                
+                        </div>
+                        <div class="text-slate-900 text-2xl font-medium font-['Poppins'] leading-normal">
+                            백과사전
+                        </div>
+                    </a>
+                </div>
+                <div class="justify-start items-start gap-2.5 inline-flex">
+                    <a class="clickEvent flex items-center gap-2.5" href="{% url 'api_app:ask' %}" name="navbarAsk">
+                        <div class="w-6 h-6 flex justify-center items-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="ri-phone-fill" clip-path="url(#clip0_2_1663)">
+                                <g id="Group">
+                                <path id="Vector" d="M21 17.3795V20.9155C21.0001 21.1686 20.9042 21.4124 20.7316 21.5977C20.559 21.7829 20.3226 21.8958 20.07 21.9135C19.633 21.9435 19.276 21.9595 19 21.9595C10.163 21.9595 3 14.7965 3 5.95947C3 5.68347 3.015 5.32647 3.046 4.88947C3.06372 4.63692 3.17658 4.40048 3.3618 4.22788C3.54703 4.05528 3.79082 3.95936 4.044 3.95947H7.58C7.70404 3.95935 7.8237 4.00533 7.91573 4.08849C8.00776 4.17165 8.0656 4.28606 8.078 4.40947C8.101 4.63947 8.122 4.82247 8.142 4.96147C8.34073 6.3484 8.748 7.69731 9.35 8.96247C9.445 9.16247 9.383 9.40147 9.203 9.52947L7.045 11.0715C8.36445 14.1459 10.8145 16.596 13.889 17.9155L15.429 15.7615C15.4919 15.6735 15.5838 15.6104 15.6885 15.5831C15.7932 15.5559 15.9042 15.5663 16.002 15.6125C17.267 16.2133 18.6156 16.6196 20.002 16.8175C20.141 16.8375 20.324 16.8595 20.552 16.8815C20.6752 16.8941 20.7894 16.952 20.8724 17.0441C20.9553 17.1361 21.0012 17.2556 21.001 17.3795H21Z" fill="#001835"/>
+                                </g>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_2_1663">
+                                <rect width="24" height="24" fill="white" transform="translate(0 0.959473)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>                            
+                        </div>
+                        <div class="text-slate-900 text-2xl font-medium font-['Poppins'] leading-normal">
+                            문의하기
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
+</div>
+

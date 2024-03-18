@@ -1,0 +1,91 @@
+.scrollbar-w-2::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+  
+  .scrollbar-track-blue-lighter::-webkit-scrollbar-track {
+    --bg-opacity: 1;
+    background-color: #f7fafc;
+    background-color: rgba(247, 250, 252, var(--bg-opacity));
+  }
+  
+  .scrollbar-thumb-blue::-webkit-scrollbar-thumb {
+    --bg-opacity: 1;
+    background-color: #edf2f7;
+    background-color: rgba(237, 242, 247, var(--bg-opacity));
+  }
+  
+  .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+    border-radius: 0.25rem;
+  }
+
+.message-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.message-content {
+    border-radius: 20px;
+    padding: 8px 12px;
+    max-width: 80%;
+}
+
+.message-sender .message-content {
+    background-color: #f0f0f0; /* 질문자 메시지 배경색 */
+    align-self: flex-end;
+    color: black;
+}
+
+.message-receiver .message-content {
+    background-color: #0061f2; /* 답변자 메시지 배경색 */
+    align-self: flex-start;
+    color: white;
+}
+
+.message-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.similar-answers-section {
+    margin-top: 8px;
+}
+
+.loading-bar {
+    display: flex;
+    padding: 8px;
+    bottom: 50px; /* 화면 하단에서 20px 위 */
+    left: 50%; /* 화면의 가운데 */
+    transform: translateX(-50%); /* 요소의 중심을 화면 중심에 맞춤 */
+    justify-content: space-between;
+}
+
+.loading-block {
+width: 20px;
+height: 20px;
+background-color: #ddd;
+animation: loadingAnimation 1.5s infinite ease-in-out;
+}
+
+@keyframes loadingAnimation {
+0%, 100% { background-color: #ddd; }
+50% { background-color: #3498db; }
+}
+
+/* 각 블록마다 애니메이션 시작 시간을 지연시킵니다. */
+.loading-block:nth-child(1) {
+animation-delay: 0s;
+}
+
+.loading-block:nth-child(2) {
+animation-delay: 0.4s;
+}
+
+.loading-block:nth-child(3) {
+animation-delay: 0.8s;
+}
+
+.loading-block:nth-child(4) {
+animation-delay: 1.2s;
+}

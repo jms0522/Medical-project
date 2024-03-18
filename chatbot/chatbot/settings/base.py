@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "chat_app",
-    'common.apps.CommonConfig',
+    "api_app",
+    'common',
     'django_prometheus',
 ]
 
@@ -109,6 +110,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'common.authentication.EmailBackend',  # 'common'은 커스텀 인증 백엔드가 있는 앱의 이름입니다.
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -135,6 +141,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+KAKAO_APP_KEY = os.getenv('KAKAO_APP_KEY')
 
 # 로깅설정
 LOGGING = {

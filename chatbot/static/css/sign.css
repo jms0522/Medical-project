@@ -1,0 +1,208 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+}
+.main-container {
+    display: flex;
+    flex-direction: row; /* 요소들을 가로 방향으로 나열 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: stretch; /* 세로 중앙 정렬 */
+    padding: 20px;
+    flex-wrap: nowrap; /* 항목이 감싸지지 않도록 설정 */
+    width: 40%; /* 뷰포트 너비에 맞춤 */
+}
+
+.container, .outer-container {
+    flex: 1; /* flex-grow, flex-shrink, flex-basis를 1로 설정하여 두 컨테이너가 가용 공간을 균등하게 나눠 가짐 */
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* 내부 항목들을 중앙에 배치 */
+    min-height: 617px; /* 예시 값, 필요에 따라 조정 */
+}
+
+.container {
+    min-width: 450px; /* 최소 너비 설정으로 너무 작아지지 않도록 함 */
+    background: white; /* 배경색 지정 */
+    width: 100%;
+    max-width: 600px; /* 최대 너비 설정 */
+    margin: auto; /* 좌우 중앙 정렬 */
+}
+
+.outer-container {
+    min-width: 380px; /* 최소 너비 설정으로 너무 작아지지 않도록 함 */
+    background:  #185DFF; /* 배경색 지정 */
+}
+
+.form-container {
+    width: 100%; /* form 태그의 너비를 컨테이너 너비에 맞춤 */
+    max-width: 100%; /* form 태그의 최대 너비를 컨테이너 최대 너비에 맞춤 */
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.input-group {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+@media (max-width: 768px) {
+    .button, input[type="text"], input[type="password"] {
+        width: 100%; /* 화면이 768px 이하일 때 너비를 조정 */
+    }
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #C1C7CD;
+}
+
+.button {
+    width: 100%; /* 컨테이너를 꽉 채우도록 설정 */
+    padding: 10px; /* 충분한 패딩 제공 */
+    background-color: #1B212F;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button.alt {
+    background-color: #FDE404;
+    color: black;
+}
+
+.signup-reminder {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.content {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    word-wrap: break-word;
+}
+
+
+.circle-group {
+    position: relative;
+    width: 100%; /* 서클 그룹의 너비를 outer-container에 맞춤 */
+    height: 300px; /* 필요에 따라 조정 */
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 중앙 정렬 */
+}
+
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.decorative-circle.large {
+    width: 180px;
+    height: 180px;
+    background: #8963F4;
+    position: absolute;
+    transform: translate(10px, -50px); /* 기존 left와 top 값을 기준으로 조정 */
+}
+
+.decorative-circle.medium {
+    width: 140px;
+    height: 140px;
+    background: #63EBF4;
+    position: absolute;
+    transform: translate(-70px, 20px); /* 기존 left와 top 값을 기준으로 조정 */
+}
+
+.decorative-circle.small {
+    width: 70px;
+    height: 70px;
+    background: #F463BA;
+    position: absolute;
+    transform: translate(115px, 35px); /* 기존 left와 top 값을 기준으로 조정 */
+}
+
+@media (min-width: 500px) {
+    .decorative-circle.large {
+        width: 140px;
+        height: 140px;
+    }
+    .decorative-circle.medium {
+        width: 122px;
+        height: 122px;
+    }
+    .decorative-circle.small {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (min-width: 768px) {
+    .circle-group {
+        height: 300px; /* 큰 화면에서의 높이 조정 */
+    }
+
+    .decorative-circle.large {
+        width: 180px; /* 크기 조정 */
+        height: 180px;
+    }
+
+    .decorative-circle.medium {
+        width: 140px; /* 크기 조정 */
+        height: 140px;
+    }
+
+    .decorative-circle.small {
+        width: 70px; /* 크기 조정 */
+        height: 70px;
+    }
+}
+
+.button.alt {
+    display: inline-flex; /* Flexbox를 사용하여 내용을 가운데 정렬합니다. */
+    align-items: center; /* 수직 방향으로 중앙 정렬합니다. */
+    justify-content: center; /* 수평 방향으로 중앙 정렬합니다. */
+    padding: 10px; /* 충분한 패딩을 제공합니다. */
+    background-color: #FEE500; /* 카카오 컬러 */
+    color: black; /* 텍스트 색상 */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none; /* a 태그의 밑줄을 제거합니다. */
+    font-size: 16px; /* 텍스트 크기 조정 */
+}
+
+.kakao-icon {
+    margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 */
+    width: 24px; /* 아이콘 크기 조정 */
+    height: 24px;
+}
+
+.input-error {
+    border: 1px solid red;
+}
+.error-message {
+    color: red;
+}

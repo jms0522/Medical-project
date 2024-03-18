@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // 폼의 기본 제출 동작을 방지
+    // event.preventDefault(); // 폼의 기본 제출 동작을 방지
     const targetElement = event.target;
     const formData = new FormData(event.target);
     const data = {

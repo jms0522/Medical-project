@@ -59,5 +59,19 @@ services:
       - rabbitmq
     restart: on-failure
 
+  rabbitmq_exporter:
+    container_name: rabbitmq_exporter
+    image: kbudde/rabbitmq-exporter
+    environment:
+      - RABBIT_URL=http://rabbitmq:15672
+      - RABBIT_USER=${RABBITMQ_USER}
+      - RABBIT_PASSWORD=${RABBITMQ_PASSWORD}
+    ports:
+      - "9419:9419"
+    networks:
+      - web
+    depends_on:
+      - rabbitmq
+
 networks:
   web:
