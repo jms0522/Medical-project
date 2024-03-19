@@ -25,6 +25,7 @@ services:
     expose:
       - "8000"
     volumes:
+      - ./static:/usr/src/app/static
       - ./staticfiles:/usr/src/app/staticfiles
       - ./templates:/usr/src/app/templates
       - ./chat_app:/usr/src/app/chat_app
