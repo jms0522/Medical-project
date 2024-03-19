@@ -41,6 +41,10 @@ LOGGING = {
         'standard': {
             'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
         },
+        'json_formatter': {
+            '()': 'pythonjsonlogger.jsonlogger.JsonFormatter',
+            'format': '%(asctime)s %(levelname)s %(name)s %(message)s'
+        },
     },
     'handlers': {
         'console': {
@@ -76,23 +80,33 @@ LOGGING = {
             'backupCount': 5,
             'formatter': 'standard',
         },
+        'logstash': {
+            'level': 'INFO',
+            'class': 'logstash.TCPLogstashHandler',
+            'host': 'logstash',  # Logstash 서버 주소
+            'port': 5959,  # Logstash 설정에서 정의한 포트
+            'version': 1,
+            'message_type': 'django',  # 사용할 메시지 타입
+            'fqdn': False,  # FQDN 사용 여부
+            'tags': ['django'],  # 태그 리스트
+        },
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'mail_admins', 'error'],
+            'handlers': ['console', 'mail_admins', 'error', 'logstash'],
             'level': 'INFO',
         },
         'django.server': {
-            'handlers': ['django.server'],
+            'handlers': ['django.server', 'logstash'],
             'level': 'INFO',
             'propagate': False,
         },
         'drrc': {
-            'handlers': ['console', 'interaction'],
+            'handlers': ['console', 'interaction', 'logstash'],
             'level': 'INFO',
         },
         'error': {
-            'handlers': ['console', 'error'],
+            'handlers': ['console', 'error', 'logstash'],
             'level': 'INFO',
         },
     }

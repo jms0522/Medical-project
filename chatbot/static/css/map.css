@@ -34,3 +34,15 @@
 #pagination {margin:10px auto;text-align: center;}
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
+
+
+.title-with-icon {
+    display: flex;
+    align-items: center; /* 중앙 정렬 */
+}
+
+.title-icon {
+    width: 50px; /* 아이콘 크기 조정 */
+    height: auto;
+    margin-right: 10px; /* 제목과의 간격 */
+    }

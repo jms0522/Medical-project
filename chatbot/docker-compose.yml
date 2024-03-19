@@ -30,7 +30,7 @@ services:
       - ./chat_app:/usr/src/app/chat_app
       - ./api_app:/usr/src/app/api_app
       - ./common:/usr/src/app/common
-      - ./logs:/app/logs
+      - ./logs:/usr/src/app/logs
     networks:
       - web
     depends_on:

@@ -169,3 +169,5 @@ binaryornot==0.4.4
 mdurl==0.1.2
 chardet==5.2.0
 cookiecutter==2.6.0
+python-logstash==0.4.8
+python-json-logger==2.0.7
