@@ -141,9 +141,7 @@ function addSimilarAnswersButton(messageItem, questionId) {
     const messageContent = messageItem.querySelector('.message-content');
     const similarAnswersButton = document.createElement('button');
     similarAnswersButton.textContent = "유사 답변 보기";
-    similarAnswersButton.classList.add(
-        'bg-blue-500', 'text-white', 'border', 'border-blue-500', 
-        'hover:bg-white', 'hover:text-blue-500', 'font-bold', 'py-2', 'px-4', 'rounded'
+    similarAnswersButton.classList.add("text-lg", 'font-bold', 'border-4', 'border-white'
     );
     
     
