@@ -25,6 +25,12 @@
     margin-bottom: 12px;
 }
 
+.message-line {
+  border-bottom: 1px solid #ccc; /* 하단에 회색 선 추가 */
+  padding-bottom: 10px; /* 내용과 하단 선 사이의 간격 */
+  margin-bottom: 10px; /* 다음 메시지 아이템과의 간격 */
+}
+
 .message-content {
     border-radius: 20px;
     padding: 8px 12px;
@@ -88,4 +94,17 @@ animation-delay: 0.8s;
 
 .loading-block:nth-child(4) {
 animation-delay: 1.2s;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: disc; /* 목록 스타일 지정 */
+  padding-left: 20px; /* 목록 들여쓰기 */
+}
+
+li {
+  line-height: 1.5; /* 줄 간격 조정 */
 }

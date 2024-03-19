@@ -43,11 +43,21 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="message-item message-sender">
             <div class="message-content">
                 <b>You</b>
+                <div class="message-line"></div>
                 <div class="message-text">${messageHtml}</div>
             </div>
         </div>`;
         messagesList.appendChild(messageItem);
     }
+
+    // <textarea>에 대한 keydown 이벤트 리스너 추가
+    messageInput.addEventListener('keydown', function(event) {
+        if (event.key === "Enter" && !event.shiftKey) {
+            event.preventDefault(); // 기본 동작(줄 바꿈)을 막음
+            // 폼 제출 로직
+            messageForm.dispatchEvent(new Event('submit', {cancelable: true})); // 폼 제출 이벤트 강제 발생
+        }
+    });
 
     if (messageForm) {
         messageForm.addEventListener('submit', function(event) {
@@ -113,8 +123,11 @@ function processServerResponse(data) {
     <div class="message-item message-receiver">
         <div class="message-content">
             <b>Dr.RC</b>
-            <div class="message-text">${responseTextHtml}</div>
+            <div class="message-line"></div>
+            <div class="message-text">${responseTextHtml}
+            </div>
         </div>
+        <div class="message-line"></div>
         <div class="similar-answers-section"></div>
     </div>`;
     hideLoader(); // 작업 완료 후 로더 숨김
@@ -182,9 +195,6 @@ function showSimilarAnswers(questionId) {
 
 // 사용자 대화 내용 출력
 document.addEventListener('DOMContentLoaded', function() {
-    const isLoggedIn = document.body.dataset.loggedIn === 'true'; // 예시
-
-    if (isLoggedIn) {
         showLoader(); // 비동기 작업 시작 전 로더 표시
         fetch('/api/get_user_chats/', {
             method: 'GET',
@@ -195,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => response.json())
         .then(data => {
+            console.log(data)
             data.chats.forEach(chat => {
                 const questionMarkdown = chat.question.replace(/\\"/g, '`');
                 const answerMarkdown = chat.answer.replace(/\\"/g, '`');
@@ -210,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="message-item message-sender">
                         <div class="message-content">
                             <b>${chat.username}</b>
+                            <div class="message-line"></div>
                             <div class="message-text">
                                 ${questionHtml}
                             </div>
@@ -225,7 +237,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="message-item message-receiver">
                     <div class="message-content">
                         <b>Dr.RC</b>
+                        <div class="message-line"></div>
                         <div class="message-text">${answerHtml}</div>
+                        <div class="message-line"></div>
                         <div class="similar-answers-section"></div>
                     </div>
                 </div>`;
@@ -237,10 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         })
         .catch(error => console.error('Error:', error));
-    } else {
-        console.log("User is not logged in.");
         hideLoader(); // 작업 완료 후 로더 숨김
-    }
 });
 
 
@@ -260,12 +271,21 @@ function getCookie(name) {
     return cookieValue;
 }
 
-document.getElementById("message-input").addEventListener("keydown", function(event) {
+document.getElementById("message_input").addEventListener("keydown", function(event) {
+    // Shift + Enter가 눌렸을 때는 줄 바꿈
     if (event.key === "Enter" && event.shiftKey) {
-        // Shift + Enter일 때는 기본 동작을 막음
-        event.preventDefault();
-        // 새 줄로 이동
+        event.preventDefault(); // 기본 동작을 막음
         var textarea = event.target;
-        textarea.value = textarea.value + "\n";
+        textarea.value += "\n"; // 새 줄로 이동
+    }
+    // Enter만 눌렸을 때는 폼 제출
+    else if (event.key === "Enter") {
+        event.preventDefault(); // 폼이 자동으로 제출되는 것을 방지
+        // 폼 제출 로직을 여기에 구현
+        var form = document.querySelector('.message-form'); // 폼 선택자에 맞게 조정
+        if(form) {
+            form.submit(); // 폼 제출
+        }
     }
 });
+

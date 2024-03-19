@@ -29,7 +29,7 @@
         {% csrf_token %}
         <div class="flex-grow flex-shrink basis-0 justify-start items-center gap-4 flex">
             <div class="flex-grow flex-shrink min-w-0 bg-black bg-opacity-10 rounded-lg mb-3">
-                <input type="text" placeholder="메세지를 입력하세요" class="message-input w-full h-16 px-4 py-2.5 text-slate-900 bg-transparent text-opacity-50 text-xl font-medium leading-10">
+                <textarea placeholder="메세지를 입력하세요" class="message-input w-full h-16 px-4 py-2.5 text-slate-900 bg-transparent text-opacity-50 text-xl font-medium leading-10" id='message-input'></textarea>
             </div>
         </div>
         <div class="flex justify-start items-start gap-3 mt-4 md:mt-0">

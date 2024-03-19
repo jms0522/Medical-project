@@ -171,6 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(data => {
         data.chats.forEach(chat => {
+            console.log(chat)
             const questionMarkdown = chat.question.replace(/\\"/g, '`');
             const answerMarkdown = chat.answer.replace(/\\"/g, '`');
 

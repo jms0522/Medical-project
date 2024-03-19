@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Dr.RC{% endblock %}
+{% load static %}  <!-- 정적 파일 태그를 사용하기 위해 필요합니다. -->
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/map.css' %}">
+{% endblock %}
+{% block content %}
+<div class="title-with-icon">
+    <h1 class="page-title">마이페이지</h1>
+</div>
+<div class="map_wrap">
+    <h1 class="page-title"> 미구현 페이지입니다</h1>
+</div>
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'javascript/map.js' %}"></script>
+    <script type="text/javascript" src="{% static 'javascript/interaction.js' %}"></script>
+{% endblock %}
