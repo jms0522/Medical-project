@@ -18,7 +18,6 @@ User = get_user_model()
 def logout_view(request):
     logout(request)
     return redirect('chat_app:chat')
-
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('chat_app:chat')
@@ -28,8 +27,6 @@ class SignUpView(CreateView):
         response = super().form_valid(form)
         messages.success(self.request, "회원가입을 축하합니다!")
         return response
-
-
 class CustomLoginView(LoginView):
     authentication_form = CustomAuthenticationForm
     template_name = 'common/login.html'
@@ -90,4 +87,4 @@ def kakao_login_callback(request):
 
 @login_required  
 def profile_view(request):
-    return redirect(reverse('chat_app:chat')) 
+    return render(request, 'common/profile.html') 

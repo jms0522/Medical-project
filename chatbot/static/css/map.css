@@ -35,6 +35,13 @@
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 
+.page-title {
+    font-size: 2.5rem; /* 제목의 크기 */
+    font-weight: bold; /* 글자 두께 */
+    color: #333; /* 글자 색상 */
+    margin-bottom: 20px; /* 제목 아래의 여백 */
+    text-align: center; /* 제목을 가운데 정렬 */
+}
 
 .title-with-icon {
     display: flex;

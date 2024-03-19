@@ -31,7 +31,7 @@ var markers = [];
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new kakao.maps.LatLng(37.48645, 127.0207), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
+        level: 4 // 지도의 확대 레벨
     };  
 // 지도를 생성합니다    
 var map = new kakao.maps.Map(mapContainer, mapOption); 
@@ -148,25 +148,31 @@ function displayPlaces(places) {
 }
 
 // 검색결과 항목을 Element로 반환하는 함수입니다
-function getListItem(index, places) {
-
+function getListItem(index, place) {
     var el = document.createElement('li'),
-    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
-                '<div class="info">' +
-                '   <h5>' + places.place_name + '</h5>';
+        itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
+                    '<div class="info">' +
+                    '   <h5>' + place.place_name + '</h5>';
 
-    if (places.road_address_name) {
-        itemStr += '    <span>' + places.road_address_name + '</span>' +
-                    '   <span class="jibun gray">' +  places.address_name  + '</span>';
+    if (place.road_address_name) {
+        itemStr += '    <span>' + place.road_address_name + '</span>' +
+                    '   <span class="jibun gray">' +  place.address_name  + '</span>';
     } else {
-        itemStr += '    <span>' +  places.address_name  + '</span>'; 
+        itemStr += '    <span>' +  place.address_name  + '</span>'; 
     }
                  
-      itemStr += '  <span class="tel">' + places.phone  + '</span>' +
-                '</div>';           
+    itemStr += '  <span class="tel">' + place.phone  + '</span>' +
+              '</div>';           
 
     el.innerHTML = itemStr;
     el.className = 'item';
+
+    // 목록 항목 클릭 이벤트를 추가합니다
+    el.onclick = function () {
+        // 클릭한 장소의 카카오 지도 링크를 새 창으로 엽니다
+        var link = `https://map.kakao.com/link/map/${place.place_name},${place.y},${place.x}`;
+        window.open(link);
+    };
 
     return el;
 }
