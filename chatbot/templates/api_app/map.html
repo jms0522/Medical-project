@@ -5,6 +5,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/map.css' %}">
 {% endblock %}
 {% block content %}
+<div class="title-with-icon">
+    <img src="{% static 'images/kakao_talk.svg' %}" alt="Icon" class="title-icon">
+    <h1 class="page-title">카카오 맵</h1>
 <div class="map_wrap">
     <div id="map" style="width:100%;height:1200px;position:relative;overflow:hidden;"></div>
 

@@ -13,15 +13,15 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean
 
+# 의존성 파일 복사 및 설치
+COPY requirements.txt /usr/src/app/
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
 # 프로젝트 파일 복사
 COPY . /usr/src/app 
 
 # 로그 디렉토리 권한 설정
 RUN chmod 755 /usr/src/app/logs
-
-# 의존성 파일 복사 및 설치
-COPY requirements.txt /usr/src/app/
-RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # 장고 설정
 RUN python manage.py makemigrations && \

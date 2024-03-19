@@ -176,6 +176,7 @@ function showSimilarAnswers(questionId) {
         hideLoader(); // 작업 완료 후 로더 숨김
         messagesList.appendChild(similarAnswerItem);
         scrollToBottom();
+        enableSubmitButton(); // 데이터 처리 완료 후 버튼 활성화
     });
 }
 
@@ -258,3 +259,13 @@ function getCookie(name) {
     }
     return cookieValue;
 }
+
+document.getElementById("message-input").addEventListener("keydown", function(event) {
+    if (event.key === "Enter" && event.shiftKey) {
+        // Shift + Enter일 때는 기본 동작을 막음
+        event.preventDefault();
+        // 새 줄로 이동
+        var textarea = event.target;
+        textarea.value = textarea.value + "\n";
+    }
+});

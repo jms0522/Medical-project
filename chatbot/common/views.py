@@ -36,7 +36,7 @@ class CustomLoginView(LoginView):
 
 def kakao_login(request):
     KAKAO_AUTH_URL = 'https://kauth.kakao.com/oauth/authorize'
-    KAKAO_REDIRECT_URI='http://43.201.236.125:8000/common/kakao/login/callback'
+    KAKAO_REDIRECT_URI='http://43.201.236.125/common/kakao/login/callback'
     KAKAO_REST_API_KEY= os.getenv('KAKAO_REST_API_KEY')
     
     kakao_auth_url = f"{KAKAO_AUTH_URL}?client_id={KAKAO_REST_API_KEY}&redirect_uri={KAKAO_REDIRECT_URI}&response_type=code"
@@ -45,7 +45,7 @@ def kakao_login(request):
 def kakao_login_callback(request):
     code = request.GET.get('code')
     KAKAO_TOKEN_URL = 'https://kauth.kakao.com/oauth/token'
-    KAKAO_REDIRECT_URI='http://43.201.236.125:8000/common/kakao/login/callback'
+    KAKAO_REDIRECT_URI='http://43.201.236.125/common/kakao/login/callback'
     
     token_request = requests.post(
         KAKAO_TOKEN_URL,
