@@ -5,11 +5,12 @@
 <link href="{% static 'css/chatbot.css' %}" rel="stylesheet">
 {% endblock %}
 {% block content %}
-    <div class="flex flex-col md:flex-row justify-start items-start w-full mt-4">
-        <div class="flex justify-start items-center gap-6 flex-nowrap">
-            <img class="w-20 h-20 rounded-full" src="{% static 'images/drrc.jpeg' %}" />
-            <div class="flex-col justify-center items-center">
-            </div>
+    <div class="flex flex-col md:flex-row justify-stretch items-start w-full">
+        <div class="w-40">
+            <a class="clickEvent" href="{% url 'chat_app:chat' %}" name="navbarMainPage">
+                <span class="text-slate-900 text-3xl font-bold font-['Poppins']">Dr.</span>
+                <span class="text-blue-600 text-3xl font-medium font-['Poppins']">RC</span>
+            </a>
         </div>
     </div>
     <br>
@@ -25,10 +26,10 @@
         </div>
     </div>
     <div class="self-stretch max-h-96 pl-11 py-1.5 flex-col justify-start items-start gap-3 flex overflow-auto"></div>
-    <form class="message-form flex justify-between items-center w-full">
+    <form class="message-form flex justify-between items-center w-full" id="message_input">
         {% csrf_token %}
         <div class="flex-grow flex-shrink basis-0 justify-start items-center gap-4 flex">
-            <div class="flex-grow flex-shrink min-w-0 bg-black bg-opacity-10 rounded-lg mb-3">
+            <div class="flex-grow flex-shrink min-w-0 bg-black bg-opacity-10 rounded-lg">
                 <textarea placeholder="메세지를 입력하세요" class="message-input w-full h-16 px-4 py-2.5 text-slate-900 bg-transparent text-opacity-50 text-xl font-medium leading-10" id='message-input'></textarea>
             </div>
         </div>

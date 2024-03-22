@@ -24,10 +24,15 @@
                 {% csrf_token %}
                 <div class="input-group {% if form.email.errors %}has-error{% endif %}">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" placeholder="사용하실 이메일을 입력하세요" class="{% if form.email.errors %}input-error{% endif %}" value="{{ form.username.value|default_if_none:'' }}">
+                    <input type="text" name="email" id="email" placeholder="사용하실 이메일을 입력하세요" class="{% if form.email.errors %}input-error{% endif %}" value="{{ form.email.value|default_if_none:'' }}">
                     {% for error in form.email.errors %}
                         <span class="error-message">{{ error }}</span>
                     {% endfor %}
+                    {% if form.username.errors %}
+                        {% for error in form.username.errors %}
+                            <div class="error">{{ error }}</div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 <div class="input-group {% if form.password1.errors %}has-error{% endif %}">
                     <label for="password">Password</label>

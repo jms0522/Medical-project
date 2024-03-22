@@ -15,18 +15,22 @@ import json
 User = get_user_model()
 # Create your views here.
 
+
 def logout_view(request):
     logout(request)
     return redirect('chat_app:chat')
+
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('chat_app:chat')
     template_name = 'common/signup.html'
     
     def form_valid(self, form):
-        response = super().form_valid(form)
-        messages.success(self.request, "회원가입을 축하합니다!")
-        return response
+        user = form.save(commit=False)
+        user.save()  # 사용자 객체를 데이터베이스에 저장합니다.
+        login(self.request, user)  # 사용자를 로그인 상태로 만듭니다.
+        return redirect(self.get_success_url())  # 로그인 후 리다이렉트할 페이지로 이동합니다.
+    
 class CustomLoginView(LoginView):
     authentication_form = CustomAuthenticationForm
     template_name = 'common/login.html'

@@ -33,7 +33,9 @@ def chat(request):
 
 # 챗봇 응답 로직
 @login_required_ajax
+@csrf_exempt
 def ask_question(request):
+    logger_error.info(f"Request method: {request.method}")
     start_time = time.time()  # 처리 시작 시간
     if request.method == "POST":
         text = request.POST.get("text", "").strip()
@@ -68,7 +70,7 @@ def get_similar_answers(request, question_id):
 def get_user_chats(request):
     username = request.user.username
     chats = ChatBot.objects.filter(username=username).order_by('created_at')
-    chat_data = list(chats.values('username','question', 'answer', 'created_at'))
+    chat_data = list(chats.values('id', 'username','question', 'answer', 'created_at'))
     return JsonResponse({'chats': chat_data})
 
 # 로그 인터랙션 로직

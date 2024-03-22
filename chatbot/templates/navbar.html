@@ -1,47 +1,37 @@
 {% load static %} 
 
-<div class="navbar w-96 h-96 px-5 pt-9 flex-col justify-start items-start gap-10 inline-flex flex">
+<div class="navbar w-96 px-5 pt-9 flex-col justify-stretch items-center gap-10 inline-flex flex">
     <div class="justify-start items-start gap-1 inline-flex">
     </div>
-    <div class="pl-2 flex-col justify-start gap-11 flex">
-        <div class="w-full justify-start items-center gap-2 inline-flex flex-col">
-            <div class="w-40 h-11 px-7 ml-7">
-                <a class="clickEvent" href="{% url 'chat_app:chat' %}" name="navbarMainPage">
-                    <span class="text-slate-900 text-3xl font-bold font-['Poppins']">Dr.</span>
-                    <span class="text-blue-600 text-3xl font-medium font-['Poppins']">RC</span>
-                </a>
-            </div>
-            {% if user.is_authenticated %}
-            <div class="flex-col pt-3 justify-center items-center gap-4 inline-flex">
-                <img class="w-40 h-40 rounded-full" src="{% static '/images/unknownUser.png' %}" alt="User Image" />
-                <div class="text-slate-900 text-2xl font-medium font-['Poppins'] leading-normal">{{ user.username }}</div>
-            </div>
-            {% else %}
-            <a href="{% url 'common:login' %}" class="flex-col justify-center items-center gap-4 inline-flex">
-                <img class="w-40 h-40 rounded-full" src="{% static '/images/unknownUser.png' %}" alt="Unknown User" />
-                <div class="text-slate-900 text-2xl font-medium font-['Poppins'] leading-normal">로그인 필요</div>
-            </a>
-            {% endif %}
-            <div class="navbar-center w-full flex-row"> 
-                {% if user.is_authenticated %}
-                    <a class="clickEvent button-custom" href="{% url 'common:logout' %}" name="navbarLogout" style="min-width: 85px;">
-                        로그아웃
-                    </a>
-                    <a class="clickEvent button-custom" href="{% url 'common:profile' %}" name="navbarProfile" style="min-width: 93px;">
-                        마이페이지
-                    </a>
-                {% else %}
-                    <a class="clickEvent button-custom" href="{% url 'common:signup' %}" name="navbarSignup" style="min-width: 85px;">
-                        회원가입
-                    </a>
-                    <a class="clickEvent button-custom" href="{% url 'common:login' %}" name="navbarLogin" style="min-width: 85px;">
-                        로그인
-                    </a>
-                {% endif %}
-            </div>
+    <div class="flex-col justify-stretch gap-2 flex">
+        {% if user.is_authenticated %}
+        <div class="flex-col pt-3 justify-center items-center gap-10 inline-flex" style='height: 260px;'>
+            <img class="w-40 h-40" src="{% static '/images/unknownUser.png' %}" alt="User Image" />
+            <div class="text-slate-900 text-2xl font-medium font-['Poppins'] leading-normal">{{ user.username }}</div>
         </div>
-    
-        
+        {% else %}
+        <a href="{% url 'common:login' %}" class="flex-col justify-center items-center gap-4 inline-flex">
+            <img class="w-40 h-40" src="{% static '/images/unknownUser.png' %}" alt="Unknown User" />
+            <div class="text-slate-900 text-2xl font-medium font-['Poppins'] leading-normal">로그인이 필요합니다</div>
+        </a>
+        {% endif %}
+        <div class="navbar-center w-full flex-row"> 
+            {% if user.is_authenticated %}
+                <a class="clickEvent button-custom" href="{% url 'common:logout' %}" name="navbarLogout" style="min-width: 85px;">
+                    로그아웃
+                </a>
+                <a class="clickEvent button-custom" href="{% url 'common:profile' %}" name="navbarProfile" style="min-width: 93px;">
+                    마이페이지
+                </a>
+            {% else %}
+                <a class="clickEvent button-custom" href="{% url 'common:signup' %}" name="navbarSignup" style="min-width: 85px;">
+                    회원가입
+                </a>
+                <a class="clickEvent button-custom" href="{% url 'common:login' %}" name="navbarLogin" style="min-width: 85px;">
+                    로그인
+                </a>
+            {% endif %}
+        </div>        
         <div class="flex-col justify-start items-start gap-11 flex">
             <div class="px-7 py-2.5 bg-blue-600 rounded-tr-3xl rounded-bl-2xl rounded-br-3xl shadow justify-center items-center gap-2.5 inline-flex">
                 <div class="w-6 h-6 flex justify-center items-center">
