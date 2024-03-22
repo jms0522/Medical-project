@@ -13,7 +13,6 @@ function enableSubmitButton() {
 }
 function showLoader() {
     document.querySelector('.loading-bar').style.display = 'flex'; // 로딩바 온
-    scrollToBottom();
 }
 function hideLoader() {
     document.querySelector('.loading-bar').style.display = 'none'; // 로딩바 오프
@@ -130,8 +129,7 @@ function processServerResponse(data) {
         <div class="message-line"></div>
         <div class="similar-answers-section"></div>
     </div>`;
-    hideLoader(); // 작업 완료 후 로더 숨김
-    addSimilarAnswersButton(messageItem, data.id); // 유사 답변 버튼 추가
+    addSimilarAnswersButton(messageItem, questionId); // 유사 답변 버튼 추가
     messagesList.appendChild(messageItem);
     scrollToBottom();
 }
@@ -143,17 +141,15 @@ function addSimilarAnswersButton(messageItem, questionId) {
     similarAnswersButton.textContent = "유사 답변 보기";
     similarAnswersButton.classList.add("text-lg", 'font-bold', 'border-4', 'border-white'
     );
-    
-    
     similarAnswersButton.setAttribute('data-question-id', questionId);
     similarAnswersButton.addEventListener('click', function() {
-        showSimilarAnswers(questionId);
+        showSimilarAnswers(questionId, messageItem);
     });
     messageContent.appendChild(similarAnswersButton);
 }
 
 // 유사 답변 내용 출력
-function showSimilarAnswers(questionId) {
+function showSimilarAnswers(questionId, messageItem) {
     console.log("showSimilarAnswers called with", questionId);
     const url = `/similar-answers/${questionId}/`;
     disableSubmitButton(); // 답변 생성 시작 시 버튼 비활성화
@@ -180,16 +176,23 @@ function showSimilarAnswers(questionId) {
         const similarAnswerItem = document.createElement('li');
         similarAnswerItem.classList.add('message', 'received');
         similarAnswerItem.innerHTML = `
-        <div class="px-8 py-4 bg-blue-600 rounded-tr-3xl rounded-br-3xl justify-center items-center gap-2.5 flex">
-        <div class="text-white text-3xl font-medium font-['Poppins'] leading-10">${answerHtml}</div>
+        <div class="message-item message-receiver">
+            <div class="message-content">
+                <b>Dr.RC</b>
+                <div class="message-line"></div>
+                <div class="message-text">${answerHtml}
+                </div>
+            </div>
+            <div class="message-line"></div>
+            <div class="similar-answers-section"></div>
         </div>`;
         // 유사 답변 내용을 HTML로 설정
         hideLoader(); // 작업 완료 후 로더 숨김
-        messagesList.appendChild(similarAnswerItem);
-        scrollToBottom();
+        messageItem.insertAdjacentElement('afterend', similarAnswerItem);
         enableSubmitButton(); // 데이터 처리 완료 후 버튼 활성화
     });
 }
+
 
 // 사용자 대화 내용 출력
 document.addEventListener('DOMContentLoaded', function() {

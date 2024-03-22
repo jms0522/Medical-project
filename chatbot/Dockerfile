@@ -25,8 +25,8 @@ RUN chmod 755 /usr/src/app/logs
 
 # 장고 설정
 RUN python manage.py makemigrations && \
-    python manage.py migrate && \
-    python manage.py collectstatic --noinput
+    python manage.py migrate
+RUN python manage.py collectstatic --noinput
 
 # Gunicorn 실행
 CMD ["gunicorn", "chatbot.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "120"]
