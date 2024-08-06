@@ -82,6 +82,10 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 -------------------------
 ## ⚙️ 개발 환경 (Environment)
 
+- AWS EC2
+  <br>
+- m5.xlarge (Main server)
+- t2.xlarge (Sub server)
 - mac os m2 (16, 512) * 2
 - mac os m3 (16, 512) * 1
 
