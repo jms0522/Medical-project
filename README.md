@@ -64,7 +64,7 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 
 --------------------------
 ## ⏰ 개발 기간
-### 📅 24.02.07 ~ 24.03.??
+### 📅 24.02.07 ~ 24.03.24
 
 --------------------------
 ## 👥 **팀원** 구성 및 소개 (Introduce)
@@ -128,7 +128,7 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 
 ## 🏛️ 설계
 
-
+- [설계PPT](https://docs.google.com/presentation/d/1Eet0n39z-mNGPofbA0Jjup6szrEWF77wK8Puh6ymBFk/edit#slide=id.g56fe61bc2f_1_5)
 
 
 
@@ -146,12 +146,15 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 ----
 
 ## 📗 System Architecture
+- [설계PPT](https://docs.google.com/presentation/d/1Eet0n39z-mNGPofbA0Jjup6szrEWF77wK8Puh6ymBFk/edit#slide=id.g56fe61bc2f_1_5)
 <br><br>
 
   ### 📗 Web Architecture
+  - [설계PPT](https://docs.google.com/presentation/d/1Eet0n39z-mNGPofbA0Jjup6szrEWF77wK8Puh6ymBFk/edit#slide=id.g56fe61bc2f_1_5)
   <br><br>
 
   ### 📗 MLOps Architecture
+  - [설계PPT](https://docs.google.com/presentation/d/1Eet0n39z-mNGPofbA0Jjup6szrEWF77wK8Puh6ymBFk/edit#slide=id.g56fe61bc2f_1_5)
   <br><br>
 
 
@@ -187,15 +190,11 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 ---------------------------
 ## 🔗 참고 
 
-- hugging face solar model
-https://huggingface.co/LDCC/LDCC-SOLAR-10.7B
-- ko_LLM leaderboard
-https://huggingface.co/spaces/upstage/open-ko-llm-leaderboard
-- 한국빅데이터학회지 : 환자의 주관적 증상 텍스트에 관한 논문
-https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002772325
-- Llama2 기반 korean model
-https://huggingface.co/squarelike/llama2-ko-medical-7b
-
+[hugging face solar model](https://huggingface.co/LDCC/LDCC-SOLAR-10.7B)
+[ko_LLM leaderboard](https://huggingface.co/spaces/upstage/open-ko-llm-leaderboard)
+[한국빅데이터학회지 : 환자의 주관적 증상 텍스트에 관한 논문](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002772325)
+[Llama2 기반 korean model](https://huggingface.co/squarelike/llama2-ko-medical-7b)
+[그외 더 많은 참고자료](https://docs.😀google.com/presentation/d/1Eet0n39z-mNGPofbA0Jjup6szrEWF77wK8Puh6ymBFk/edit#slide=id.g5158d5a3ec_2_73)
 
 ---------------------------
 
@@ -207,6 +206,12 @@ https://huggingface.co/squarelike/llama2-ko-medical-7b
 
 ## 😀 vote
 
+- [2차발표](https://github.com/jms0522/Medical-project/discussions/69)
 - [3차발표](https://strawpoll.com/ajnEObG9NZW)
+- [4차발표](https://github.com/jms0522/Medical-project/discussions/101)
+---------------------------------
 
+## 📅 Daily Scrum
+<br>
+- [회의기록](https://github.com/jms0522/Medical-project/discussions/68)
 
