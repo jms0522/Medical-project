@@ -202,7 +202,7 @@ Electronic patient message는 의학적 지식을 묻는 경우도 높다.
 <br>
 [Llama2 기반 korean model](https://huggingface.co/squarelike/llama2-ko-medical-7b)
 <br>
-[그외 더 많은 참고자료](https://docs.😀google.com/presentation/d/1Eet0n39z-mNGPofbA0Jjup6szrEWF77wK8Puh6ymBFk/edit#slide=id.g5158d5a3ec_2_73)
+[그외 더 많은 참고자료](https://docs.google.com/presentation/d/1Eet0n39z-mNGPofbA0Jjup6szrEWF77wK8Puh6ymBFk/edit#slide=id.g5158d5a3ec_2_73)
 
 ---------------------------
 
