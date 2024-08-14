@@ -5,12 +5,6 @@
 
 <img src="https://images.squarespace-cdn.com/content/v1/59c742a690bade1b59209951/1506436861628-9OKUIE0Y1C8SDLAX62EQ/steth+2.jpg" alt="의료 이미지" width="600" height="300">
 
----
-<p align="center">
-  <img src="https://i.ibb.co/fCGgB5X/logo-removebg-preview.png" alt="DR.RC" width="300" height="200"> 
-  <img src="https://i.ibb.co/ykbRyL9/Free-Sample-By-Wix-removebg-preview.png" alt="Free-Sample-By-Wix" border="0" width="300" height="200">
-  <a href="https://imgbb.com/"><img src="https://i.ibb.co/VCHz9YS/Free-Sample-By-Wix.jpg" alt="Free-Sample-By-Wix" border="0" width="300" height="200"></a><br /><a target='_blank' href='https://imgbb.com/'></a><br />
-</p>
 
 # 📕 빅데이터 기반 의료 AI 서비스 (가제 : Dr.RC)
 
